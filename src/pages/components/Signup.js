@@ -11,8 +11,8 @@ import man1 from "../img/man_1.png"
 function Signup({ newUser, allUsers }) {
     let history = useHistory();
     const orderComplete = () => {
-        userInfo.slice(userInfo.indexOf(userInfo.find()))
-        newUser(userInfo)
+        const obj = Object.fromEntries(Object.entries(userInfo).slice(0, 5))
+        newUser(obj)
         history.push("/")
     }
 
@@ -25,12 +25,16 @@ function Signup({ newUser, allUsers }) {
 
     const handleSubmit = (e) => {
         e.preventDefault()
-        if (!userInfo && userInfo.pword === userInfo.pwordmatch) {
+        const data = Object.values(userInfo)
+        if (data.length < 6 || data.some(o => o === "")) {
+            window.alert("You left some fields blank please try again")
+        } else if (userInfo.pword !== userInfo.pwordmatch) {
+            console.log(userInfo.pword, userInfo.pwordmatch)
+            window.alert("You passwords do not match please try again")
+        } else if (data.length === 6 && data.every(o => o !== "")) {
             const u = allUsers.find(u => u.email.toLowerCase() === userInfo.email.toLowerCase())
-            !u ? orderComplete() 
-            : window.alert("Email entered is currently in use, please re-enter and try again")
-        } else {
-            window.alert("You passwords do not match, or you left some fields blank please try again")
+            !u ? orderComplete()
+                : window.alert("Email entered is currently in use, please re-enter and try again")
         }
     }
 
@@ -40,15 +44,15 @@ function Signup({ newUser, allUsers }) {
                 <div className="login-head"><p>Sign up</p></div>
                 <form className="login-body">
                     <label htmlFor="firstName">First name</label>
-                    <input type="text" name="firstName" onChange={(e) => handleChange(e)}></input>
+                    <input type="text" name="firstName" required onChange={(e) => handleChange(e)}></input>
                     <label htmlFor="lastName">Last name</label>
-                    <input type="text" name="lastName" onChange={(e) => handleChange(e)}></input>
+                    <input type="text" name="lastName" required onChange={(e) => handleChange(e)}></input>
                     <label htmlFor="email">Email</label>
-                    <input type="email" name="email" onChange={(e) => handleChange(e)}></input>
+                    <input type="email" name="email" required onChange={(e) => handleChange(e)}></input>
                     <label htmlFor="password">Password</label>
-                    <input type="password" name="pword" onChange={(e) => handleChange(e)}></input>
+                    <input type="password" name="pword" required onChange={(e) => handleChange(e)}></input>
                     <label htmlFor="password">Confirm Password</label>
-                    <input type="password" name="pwordmatch" onChange={(e) => handleChange(e)}></input>
+                    <input type="password" name="pwordmatch" required onChange={(e) => handleChange(e)}></input>
                     <div className="uploadDiv">
                         <div className="uploadbtndiv">
                             <input type="file" /><p className="filep">Upload avatar</p>

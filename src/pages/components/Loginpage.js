@@ -16,7 +16,7 @@ const LoginPage = ({ updateUser, user, allUsers }) => {
         if (user.email === enteredEmail.toLowerCase() && user.pword === enteredPword) {
             history.push("/wallet")
         } else {
-            window.alert("Incorrect details - please sign up!")
+            window.alert("Incorrect details - please try again!")
         }
     }
 
@@ -42,5 +42,3 @@ const LoginPage = ({ updateUser, user, allUsers }) => {
 }
 
 export default LoginPage
-
-

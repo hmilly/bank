@@ -14,8 +14,7 @@ import LoginPage from "./pages/components/Loginpage"
 import Signup from "./pages/components/Signup";
 
 import Wallet from "./pages/components/Wallet";
-import Savings from "./pages/components/Savings";
-import Loans from "./pages/components/Loans";
+import WalletType from "./pages/components/WalletType";
 
 import Transactions from "./pages/components/Transactions"
 import ToggleDisplay from './pages/components/ToggleDisplay'
@@ -40,32 +39,33 @@ function App() {
 	}
 
 	const newUser = async (userDetails) => {
+		const u = {
+			...userDetails,
+			"balance": 10,
+			"savingsBal": 0,
+			"loansBal": -0,
+			"transactions": [],
+			"savingTran": [],
+			"loansTran": []
+		}
 		const configObject = await {
 			method: "POST",
 			headers: {
 				"Content-Type": "application/json",
 				Accept: "application/json",
 			},
-			body: JSON.stringify({
-				...userDetails,
-				"balance": 10,
-				"savingsBal": 0,
-				"loansBal": -0,
-				"transactions": [],
-				"savingTran": [],
-				"loansTran": []
-			}),
+			body: JSON.stringify(u),
 		};
 		await fetch(`http://localhost:8080/users`, configObject)
 			.then((res) => (res.ok ? res.json() : "Oops we couldn't update that!"))
+			.then(res => setAllUsers([...allUsers, u]))
 			.catch((error) => console.log(error));
 	};
 
 	const [allUsers, setAllUsers] = useState([])
-
 	useEffect(() => {
-		const getUsers = async () => {
-			await fetch('http://localhost:8080/users')
+		const getUsers = () => {
+			fetch('http://localhost:8080/users')
 				.then(res => res.json())
 				.then(res => setAllUsers(res))
 				.catch((error) => console.log(error));
@@ -96,7 +96,8 @@ function App() {
 					</Route>
 					<Route path="/savings">
 						<Mainheader Settings={Settings} />
-						<Savings
+						<WalletType
+							name={"savings"}
 							updateUser={updateUser}
 							user={user}
 							today={today}
@@ -105,7 +106,8 @@ function App() {
 					</Route>
 					<Route path="/loans">
 						<Mainheader Settings={Settings} />
-						<Loans
+						<WalletType
+							name={"loans"}
 							updateUser={updateUser}
 							user={user}
 							today={today}

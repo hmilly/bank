@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 
-export default function ToggleDisplay({ savingsTransfer, setUserInput, user, updateUser }) {
+export default function ToggleDisplay({ transfer, setUserInput, user, updateUser }) {
 
     const [num, setNum] = useState(0)
     const handleNum = (n) => {
@@ -17,7 +17,7 @@ export default function ToggleDisplay({ savingsTransfer, setUserInput, user, upd
 
 
     //     const update = (formName, transType, balType) => {
-    //         if (savingsTransfer.btnName === "in") {
+    //         if (transfer.btnName === "in") {
     //             newTotBalance = handleNum(user.balance -= num)
     //             newTempBalance = handleNum(balType += num)
     //             newTrans = [...user.transactions, { transName: formName, minus: num }]
@@ -38,14 +38,14 @@ export default function ToggleDisplay({ savingsTransfer, setUserInput, user, upd
     //     }
 
 
-    // if (savingsTransfer.compName === "savings") {
+    // if (transfer.compName === "savings") {
     //         update("savings", savingTran, user.savingsBal)
     //     } else {
     //         update("loans", loansTran, user.loansBal)
     //     }
             
-        if (savingsTransfer.compName === "savings") {
-            if (savingsTransfer.btnName === "in"){
+        if (transfer.compName === "savings") {
+            if (transfer.btnName === "in"){
                 newTotBalance = handleNum(user.balance -= num)
                 newTempBalance = handleNum(user.savingsBal += num)
                 newTrans = [...user.transactions, { transName: "savings", minus: num }]
@@ -65,8 +65,8 @@ export default function ToggleDisplay({ savingsTransfer, setUserInput, user, upd
             })
         } 
 
-        if (savingsTransfer.compName === "loans") {
-            if (savingsTransfer.btnName === "in"){
+        if (transfer.compName === "loans") {
+            if (transfer.btnName === "in"){
                 newTotBalance = handleNum(user.balance += num)
                 newTempBalance = handleNum(user.loansBal -= num)
                 newTrans = [...user.transactions, { transName: "loan", plus: num }]
@@ -89,7 +89,7 @@ export default function ToggleDisplay({ savingsTransfer, setUserInput, user, upd
     }
 
     return (
-        <div className="toggledButton" onClick={() => setUserInput({ ...savingsTransfer, state: true })}>
+        <div className="toggledButton" onClick={() => setUserInput({ ...transfer, state: true })}>
             <form onSubmit={handleSubmit}>
                 <div>
                     <p>£</p>

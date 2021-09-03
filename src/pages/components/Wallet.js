@@ -13,7 +13,6 @@ function Wallet({ user, today, Transactions }) {
         pound = Math.trunc(balance)
         let bp = (balance - pound).toFixed(2)
         pence = bp.slice(bp.length - 2)
-
     }
 
     return (
