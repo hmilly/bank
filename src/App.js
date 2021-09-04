@@ -16,9 +16,6 @@ import Signup from "./pages/components/Signup";
 import Wallet from "./pages/components/Wallet";
 import WalletType from "./pages/components/WalletType";
 
-import Transactions from "./pages/components/Transactions"
-import ToggleDisplay from './pages/components/ToggleDisplay'
-import Settings from "./pages/components/Settings"
 
 
 function App() {
@@ -86,33 +83,30 @@ function App() {
 						<Signup updateUser={updateUser} user={user} newUser={newUser} allUsers={allUsers} />
 					</Route>
 					<Route path="/wallet">
-						<Mainheader Settings={Settings} />
+						<Mainheader />
 						<Wallet
 							updateUser={updateUser}
 							user={user}
 							today={today}
-							ToggleDisplay={ToggleDisplay}
-							Transactions={Transactions} />
+						/>
 					</Route>
 					<Route path="/savings">
-						<Mainheader Settings={Settings} />
+						<Mainheader />
 						<WalletType
 							name={"savings"}
 							updateUser={updateUser}
 							user={user}
 							today={today}
-							ToggleDisplay={ToggleDisplay}
-							Transactions={Transactions} />
+						/>
 					</Route>
 					<Route path="/loans">
-						<Mainheader Settings={Settings} />
+						<Mainheader />
 						<WalletType
 							name={"loans"}
 							updateUser={updateUser}
 							user={user}
 							today={today}
-							ToggleDisplay={ToggleDisplay}
-							Transactions={Transactions} />
+						/>
 					</Route>
 				</Switch>
 			</div>

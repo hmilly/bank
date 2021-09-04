@@ -1,96 +1,93 @@
 import React, { useState } from 'react'
 
-export default function ToggleDisplay({ transfer, setUserInput, user, updateUser }) {
+function ToggleDisplay({ name, details, setDetails, updateUser, user }) {
 
     const [num, setNum] = useState(0)
     const handleNum = (n) => {
         return +parseFloat(n).toFixed(2)
     }
 
+    // if (savingsTransfer.compName === "savings") {
+    //     if (savingsTransfer.btnName === "in"){
+    //         newTotBalance = handleNum(user.balance -= num)
+    //         newTempBalance = handleNum(user.savingsBal += num)
+    //         newTrans = [...user.transactions, { transName: "savings", minus: num }]
+    //         newTempTrans = [...user.savingTran, { transName: "savings", plus: num }]
+    //     } else {
+    //         newTotBalance = handleNum(user.balance += num)
+    //         newTempBalance = handleNum(user.savingsBal -= num)
+    //         newTrans = [...user.transactions, { transName: "savings", plus: num }]
+    //         newTempTrans = [...user.savingTran, { transName: "savings", minus: num }]
+    //     }
+    //     updateUser({
+    //         ...user,
+    //         balance: newTotBalance,
+    //         savingsBal: newTempBalance,
+    //         transactions: newTrans,
+    //         savingTran: newTempTrans
+    //     })
+    // } 
+
+    // if (savingsTransfer.compName === "loans") {
+    //     if (savingsTransfer.btnName === "in"){
+    //         newTotBalance = handleNum(user.balance += num)
+    //         newTempBalance = handleNum(user.loansBal -= num)
+    //         newTrans = [...user.transactions, { transName: "loan", plus: num }]
+    //         newTempTrans = [...user.loansTran, { transName: "loan", minus: num }]
+    //     } else {
+    //         newTotBalance = handleNum(user.balance -= num)
+    //         newTempBalance = handleNum(user.loansBal += num)
+    //         newTrans = [...user.transactions, { transName: "loan", minus: num }]
+    //         newTempTrans = [...user.loansTran, { transName: "loan", plus: num }]
+    //     }
+    //     updateUser({
+    //         ...user,
+    //         balance: newTotBalance,
+    //         loansBal: newTempBalance,
+    //         transactions: newTrans,
+    //         loansTran: newTempTrans
+    //     })
+    // } 
+    //}
+
+
+
+
     const handleSubmit = (e) => {
         e.preventDefault()
-        let newTotBalance
-        let newTempBalance
-        let newTrans
-        let newTempTrans
+
+        // if (user) {
+        //     (name === "savings")
+        //         ? update("savings", user.savingsBal, savingsBal, savingTran)
+        //         : update("loans", user.loansBal, loanBal, type)
+        // }
 
 
-
-    //     const update = (formName, transType, balType) => {
-    //         if (transfer.btnName === "in") {
-    //             newTotBalance = handleNum(user.balance -= num)
-    //             newTempBalance = handleNum(balType += num)
-    //             newTrans = [...user.transactions, { transName: formName, minus: num }]
-    //             newTempTrans = [ ...user.transType, {transName: formName, plus: num }]
-    //         } else {
-    //             newTotBalance = handleNum(user.balance += num)
-    //             newTempBalance = handleNum(balType -= num)
-    //             newTrans = [...user.transactions, { transName: formName, plus: num }]
-    //             newTempTrans = [...user.transType, { transName: formName, minus: num }]
-    //         }
-    //         updateUser({
-    //             ...user,
-    //             balance: newTotBalance,
-    //             balType: newTempBalance,
-    //             transactions: newTrans,
-    //             tran: newTempTrans
-    //         })
-    //     }
-
-
-    // if (transfer.compName === "savings") {
-    //         update("savings", savingTran, user.savingsBal)
-    //     } else {
-    //         update("loans", loansTran, user.loansBal)
-    //     }
-            
-        if (transfer.compName === "savings") {
-            if (transfer.btnName === "in"){
-                newTotBalance = handleNum(user.balance -= num)
-                newTempBalance = handleNum(user.savingsBal += num)
-                newTrans = [...user.transactions, { transName: "savings", minus: num }]
-                newTempTrans = [...user.savingTran, { transName: "savings", plus: num }]
+        const update = (name, balance, balName, tranName) => {
+            if (details.btnName === "in") {
+                updateUser({
+                    ...user,
+                    balance: handleNum(user.balance -= num),
+                    [balName]: handleNum(balance += num),
+                    transactions: [...user.transactions, { transName: name, minus: num }],
+                    [tranName]: [[...user.tranName, { transName: name, plus: num }]]
+                })
             } else {
-                newTotBalance = handleNum(user.balance += num)
-                newTempBalance = handleNum(user.savingsBal -= num)
-                newTrans = [...user.transactions, { transName: "savings", plus: num }]
-                newTempTrans = [...user.savingTran, { transName: "savings", minus: num }]
+                updateUser({
+                    ...user,
+                    balance: handleNum(user.balance += num),
+                    [balName]: handleNum(balance -= num),
+                    transactions: [...user.transactions, { transName: name, plus: num }],
+                    [tranName]: [[...user.tranName, { transName: name, minus: num }]]
+                })
             }
-            updateUser({
-                ...user,
-                balance: newTotBalance,
-                savingsBal: newTempBalance,
-                transactions: newTrans,
-                savingTran: newTempTrans
-            })
-        } 
 
-        if (transfer.compName === "loans") {
-            if (transfer.btnName === "in"){
-                newTotBalance = handleNum(user.balance += num)
-                newTempBalance = handleNum(user.loansBal -= num)
-                newTrans = [...user.transactions, { transName: "loan", plus: num }]
-                newTempTrans = [...user.loansTran, { transName: "loan", minus: num }]
-            } else {
-                newTotBalance = handleNum(user.balance -= num)
-                newTempBalance = handleNum(user.loansBal += num)
-                newTrans = [...user.transactions, { transName: "loan", minus: num }]
-                newTempTrans = [...user.loansTran, { transName: "loan", plus: num }]
-            }
-            updateUser({
-                ...user,
-                balance: newTotBalance,
-                loansBal: newTempBalance,
-                transactions: newTrans,
-                loansTran: newTempTrans
-            })
-        } 
-
+        }
     }
 
     return (
-        <div className="toggledButton" onClick={() => setUserInput({ ...transfer, state: true })}>
-            <form onSubmit={handleSubmit}>
+        <div className="toggledButton" onClick={() => setDetails({ ...details, state: true })}>
+            <form>
                 <div>
                     <p>£</p>
                     <input
@@ -98,8 +95,10 @@ export default function ToggleDisplay({ transfer, setUserInput, user, updateUser
                         min={0} step={0.01}
                         onChange={(e) => setNum(handleNum(e.target.value))}></input>
                 </div>
-                <button className="toggledTrans">Transfer</button>
+                <button className="toggledTrans" onClick={(e) => handleSubmit(e)}>details</button>
             </form>
         </div>
     )
 }
+
+export default ToggleDisplay

@@ -1,7 +1,8 @@
 import React, { useState } from 'react'
 import man1 from "../img/man_1.png"
+import Transactions from "./Transactions"
 
-function Wallet({ user, today, Transactions }) {
+function Wallet({ user, today }) {
 
     let balance, pound, pence
 

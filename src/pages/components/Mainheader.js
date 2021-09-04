@@ -1,8 +1,9 @@
 import React, { useState } from 'react'
 import { Link } from "react-router-dom";
 import ch from "../img/CH.png"
+import Settings from "./Settings"
 
-function Mainheader({Settings}) {
+function Mainheader() {
 
     const [showMenu, setShowMenu] = useState(false)
     let menu;
@@ -17,7 +18,7 @@ function Mainheader({Settings}) {
                     <img src={ch} alt="CH" className="ch"></img>
                 </div>
                 <ul className="txt">
-        
+
                     <li>
                         <Link to="/wallet">WALLET</Link>
                     </li>

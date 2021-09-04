@@ -1,16 +1,14 @@
 import React, { useState } from 'react'
-import man1 from "../img/man_1.png"
+import ToggleDisplay from "./ToggleDisplay"
+import Transactions from "./Transactions"
 
-function WalletType({ name, updateUser, user, today, ToggleDisplay, Transactions }) {
-
-
-    const [transfer, setTransfer] = useState(
-        { state: false, btnName: "", compName: "savings" }
+function WalletType({ name, updateUser, user, today }) {
+    const [details, setDetails] = useState(
+        { state: false, btnName: "" }
     )
 
-    const setBal = (num) =>
-        num === undefined ? "-" : Number(num).toFixed(2)
-
+    const balance = (num) => num === undefined ? "-" : Number(num).toFixed(2)  
+    
     return (
         <>
             <div className="account">
@@ -18,7 +16,7 @@ function WalletType({ name, updateUser, user, today, ToggleDisplay, Transactions
                     <div className={`${name}balance`}>
                         <div className="balance">
                             <h1 className="pounds">
-                                {name === "savings" ? setBal(user.savingsBal) : setBal(user.loansBal)}
+                                {name === "savings" ? balance(user.savingsBal) : balance(user.loansBal)}
                             </h1>
                         </div>
                         <p className="balanceP">Balance</p>
@@ -26,18 +24,18 @@ function WalletType({ name, updateUser, user, today, ToggleDisplay, Transactions
                     <div className="savingsbuttons">
                         <button className={name === "savings" ? "in" : "in takeout"}
                             onClick={() =>
-                                setTransfer({
-                                    ...transfer,
-                                    state: !transfer.state,
+                                setDetails({
+                                    ...details,
+                                    state: !details.state,
                                     btnName: "in"
                                 })}>
                             {name === "savings" ? "PAY IN" : "TAKE LOAN"}
                         </button>
                         <button className={name === "savings" ? "out" : "out takeout"}
                             onClick={() =>
-                                setTransfer({
-                                    ...transfer,
-                                    state: !transfer.state,
+                                setDetails({
+                                    ...details,
+                                    state: !details.state,
                                     btnName: "out"
                                 })}>
                             {name === "savings" ? "PAY OUT" : "PAY BACK"}
@@ -45,14 +43,15 @@ function WalletType({ name, updateUser, user, today, ToggleDisplay, Transactions
                     </div>
 
                 </div>
-                {!transfer.state
+                {!details.state
                     ? <></>
                     : <ToggleDisplay
-                        transfer={transfer}
-                        setUserInput={setTransfer}
+                        name={name}
+                        details={details}
+                        setDetails={setDetails}
                         updateUser={updateUser}
                         user={user}
-                        onClick={() => setTransfer(true)}
+                        onClick={setDetails({...details, state: false})}
                     />
                 }
             </div>
