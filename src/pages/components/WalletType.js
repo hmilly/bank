@@ -2,13 +2,13 @@ import React, { useState } from 'react'
 import ToggleDisplay from "./ToggleDisplay"
 import Transactions from "./Transactions"
 
-function WalletType({ name, updateUser, user, today }) {
+function WalletType({ name, balance, btn1, btn2, updateUser, user, today }) {
     const [details, setDetails] = useState(
         { state: false, btnName: "" }
     )
 
-    const balance = (num) => num === undefined ? "-" : Number(num).toFixed(2)  
-    
+    const balance = (num) => num === undefined ? "-" : Number(num).toFixed(2)
+
     return (
         <>
             <div className="account">
@@ -16,29 +16,29 @@ function WalletType({ name, updateUser, user, today }) {
                     <div className={`${name}balance`}>
                         <div className="balance">
                             <h1 className="pounds">
-                                {name === "savings" ? balance(user.savingsBal) : balance(user.loansBal)}
+                                {balance(balance)}
                             </h1>
                         </div>
                         <p className="balanceP">Balance</p>
                     </div>
                     <div className="savingsbuttons">
-                        <button className={name === "savings" ? "in" : "in takeout"}
+                        <button className={btn1}
                             onClick={() =>
                                 setDetails({
                                     ...details,
                                     state: !details.state,
                                     btnName: "in"
                                 })}>
-                            {name === "savings" ? "PAY IN" : "TAKE LOAN"}
+                            {btn1}
                         </button>
-                        <button className={name === "savings" ? "out" : "out takeout"}
+                        <button className={btn2}
                             onClick={() =>
                                 setDetails({
                                     ...details,
                                     state: !details.state,
                                     btnName: "out"
                                 })}>
-                            {name === "savings" ? "PAY OUT" : "PAY BACK"}
+                            {btn2}
                         </button>
                     </div>
 
@@ -51,14 +51,11 @@ function WalletType({ name, updateUser, user, today }) {
                         setDetails={setDetails}
                         updateUser={updateUser}
                         user={user}
-                        onClick={setDetails({...details, state: false})}
+                        onClick={setDetails({ ...details, state: false })}
                     />
                 }
             </div>
-
-            {name === "savings"
-                ? <Transactions trans={user.savingTran} today={today} />
-                : <Transactions trans={user.loansTran} today={today} />}
+            <Transactions trans={balance} today={today} />
         </>
     )
 }

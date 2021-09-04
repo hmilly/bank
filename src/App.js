@@ -94,6 +94,9 @@ function App() {
 						<Mainheader />
 						<WalletType
 							name={"savings"}
+							balance={user.savingsBal}
+							btnName1={"PAY IN"}
+							btnName2={"PAY OUT"}
 							updateUser={updateUser}
 							user={user}
 							today={today}
@@ -103,6 +106,9 @@ function App() {
 						<Mainheader />
 						<WalletType
 							name={"loans"}
+							balance={user.loansBal}
+							btnName1={"TAKE LOAN"}
+							btnName2={"PAY BACK"}
 							updateUser={updateUser}
 							user={user}
 							today={today}

@@ -71,7 +71,7 @@
     padding: 3%;
     text-align: right;
 }
-.in, .out{
+button.IN, button.TAKE, button.PAY{
     display: block;
     font-size: small;
     margin: 10% 0;
@@ -80,11 +80,11 @@
     background-color: limegreen;
     color: white;
 }
-.out{
+button.OUT{
     background-color: grey;
 }
 
-.takeout{
+button.LOAN, button.BACK{
     background-color: turquoise;
 }
 
