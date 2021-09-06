@@ -1,38 +1,37 @@
-.login-box{
+.login{
     background: rgb(36,36,36);
     background: linear-gradient(45deg, rgba(36,36,36,1) 0%, rgba(52,52,52,1) 0%, rgba(37,37,43,1) 100%);
     color: white;
-    width: 30%;
+    width: 40%;
     height: auto;
+    display: block;
+    margin: 8% auto;
     border-radius: 10px;
 }
-.login-head{
+.login section{
     border-bottom: orangered solid 1px;
 }
-p{
+.login p{
     text-align: right;
     margin: 6%;
 }
-.login-box{
-    display: block;
-    margin: 8% auto;
-}
-.login-body{
+.login form, .form{
     margin: 5% 18%;
 }
-label, input, button{
+.login label, .login input, .login button, .login span,
+.form label, .form input, .form button{
     display: block;
-    margin: 5% auto;
+    margin: 10px auto;
     width: 98%;
 }
-input{
+.login input,.form input{
     color: white;
     border: none;
     border-bottom: orangered solid 1px;
     background-color: rgba(36, 36, 36, 0);
     outline: none;
 }
-button{
+.login button, .form button{
     border-radius: 5px;
     border: grey solid 1px;
     background-color: grey;
@@ -41,33 +40,33 @@ button{
     padding: 10px;
     cursor: pointer;
 }
-button:active, button:hover{
+
+.signup a{
+    color: orangered;
+    display: block;
+    width: 30%;
+    padding: 5px 0;
+    margin: 0 auto;
+    cursor: pointer;
+}
+
+.login button:active, .login button:hover,
+.form button:active, .form button:hover{
      background-color: orangered;
 }
-.su-login{
-    background-color: orangered;
-    border: orangered solid 1px;
-}
-.signup{
-    text-align: center;
-    padding: 2%;
-    align-self: center;
-    color: orangered;
-    cursor: pointer;
-    text-decoration: none;
-}
-.signup:hover{
+.signup a:hover{
     text-decoration: underline;
 }
-.signup:active, .signup:visited{
+.signup a:active, .signup a:visited{
     color: orangered;
 }
-.uploadDiv{
+
+.upload{
     position: relative;
     padding: 4% 0;
     width: 100%;
 }
-.uploadbtndiv{
+.uploadbtn{
     display: inline-block;
     width: 40%;
     height: auto;
@@ -85,28 +84,34 @@ input[type="file"] {
     text-align: right;
     cursor: pointer;
   }
-  .file{
+.file{
     text-align: center;
     font-size: 14px;
     top: -50px;
   }
-  .uploadbtn {
+.uploadbtn button{
     background-color: orangered;
     border: orangered solid 1px;
     width: 90%;
     font-size: 12px;
+    padding: 6px 0;
     height: auto;
     cursor: pointer;
   }
 
-  .uploadimgdiv{
+.uploadimg{
     display: inline-block;
     width: 30%;
     margin-left: 20%;
     margin-top: -7%
 }
-  .usersimgchoice{
+.uploadimg img{
     display: inline-block;
     width: 100%;
     height: auto;
+}
+#su-login{
+    background-color: orangered;
+    border: orangered solid 1px;
+    font-size: 18px;
 }

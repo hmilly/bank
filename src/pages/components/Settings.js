@@ -12,7 +12,7 @@ function Settings({ setMenu, user }) {
                 </a>
                 <h1>Settings</h1>
             </div>
-            <div className="blockacc">
+            <div className="block">
                 <p>Block account</p>
                 <label className="switch">
                     <input type="checkbox" />
@@ -27,7 +27,7 @@ function Settings({ setMenu, user }) {
                     <span className="slider round"></span>
                 </label>
             </div>
-            <h4 className="user">User</h4>
+            <h4>User</h4>
             <Form user={user} btnName={"Save"} />
         </div>
     )

@@ -2,38 +2,44 @@
   display: flex;
   height: 7%;
   justify-content: space-between;
-  background: rgb(36,36,36);
-  background: linear-gradient(45deg, rgba(36,36,36,1) 0%, rgba(52,52,52,1) 0%, rgba(37,37,43,1) 100%);
+  background: rgb(94, 94, 94);
+  background: linear-gradient(45deg, rgb(68, 68, 68) 0%, rgb(85, 85, 85) 0%, rgba(37,37,43,1) 100%);
 }
-.ch{
+.header img{
     margin: 20% 10%;
 }
-.txt{
+.header ul, .txt{
   display: flex;
   justify-content: flex-end;
   align-items: center;
   list-style: none;
 }
-li{
-  margin: 0 3%;
+.header li{
+  margin: 0 5px;
   font-size: small;
 }
-
-.txt a, .txt p{
+.header a, .header button, .header p{
   display: inline-block;
   color: white;
   text-decoration: none;
   white-space: nowrap;
+  background-color: rgba(0, 0, 0, 0);
+  border: none;
 }
-li a:hover{
-  color: thistle;
+.header p{
+  padding: 20px;  
+}
+.header a, .header button{
+  padding: 6px;
+  height: 100%;
+  border-radius: 4px;
   cursor: pointer;
 }
-/* ------------------   styles for Settings tab -----------------*/
-.settings form{
-  width: 100%;
-  margin: 0;
+li a:hover,  .header button:hover{
+  text-decoration: underline;
 }
+/* ------------------   styles for Settings tab -----------------*/
+
 .settings{
   position: absolute;
   background: rgb(36,36,36);
@@ -46,7 +52,7 @@ li a:hover{
   padding: 2%;
   border-top: orangered solid 3px;
 }
-.settingsTitle, .blockacc, .rounds{
+.settingsTitle, .block, .rounds{
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -64,21 +70,19 @@ li a:hover{
 .settingsTitle h1{
   font-size: x-large;
 }
-.blockacc p, .rounds p{
+.block p, .rounds p{
   margin: auto 0;
   width: 52%;
   text-align: left;
 }
-.user{
+.settings h4{
   font-size: x-large;
   border-bottom: orangered solid 2px;
 }
-.save{
-  background-color: grey;
-  border: grey solid 1px;
-  font-size: x-large;
+.settings form{
+  width: 100%;
+  margin: 0;
 }
-
 /* styles for on/off switch */
 .switch {
   position: relative;

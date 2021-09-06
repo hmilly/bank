@@ -32,7 +32,6 @@ function Transactions({ trans, today }) {
                 )
                 )}
             </div>
-
         </div>
     )
 }

@@ -21,23 +21,21 @@ const LoginPage = ({ updateUser, user, allUsers }) => {
     }
 
     return (
-        <>
-            <div className="login-box">
-                <div className="login-head"><p>Login</p></div>
-                <form className="login-body" onSubmit={handleSubmit} >
-                    <label htmlFor="email">Email</label>
-                    <input type="email" name="email" onChange={(e) => setEnteredEmail(e.target.value)}></input>
-                    <label htmlFor="password">Password</label>
-                    <input type="password" name="password" onChange={(e) => setEnteredPword(e.target.value)}></input>
-                    <button >
-                        Login
-                    </button>
-                    <div className="signup">
-                        <Link to="/signup">Sign up</Link>
-                    </div>
-                </form>
-            </div>
-        </>
+        <div className="login">
+            <section>
+                <p>Login</p>
+            </section>
+            <form onSubmit={handleSubmit} >
+                <label htmlFor="email">Email</label>
+                <input type="email" name="email" onChange={(e) => setEnteredEmail(e.target.value)} />
+                <label htmlFor="password">Password</label>
+                <input type="password" name="password" onChange={(e) => setEnteredPword(e.target.value)} />
+                <button>Login</button>
+                <span className="signup">
+                    <Link to="/signup">Sign up</Link>
+                </span>
+            </form>
+        </div>
     )
 }
 

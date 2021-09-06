@@ -11,10 +11,10 @@ import Form from "./Form"
 function Signup({ newUser, allUsers }) {
     let history = useHistory();
     return (
-        <div className="login-box">
-            <div className="login-head">
+        <div className="login">
+            <section>
                 <p>Sign up</p>
-            </div>
+            </section>
             <Form user={newUser} allUsers={allUsers} btnName={"Sign Up"} />
         </div>
     )

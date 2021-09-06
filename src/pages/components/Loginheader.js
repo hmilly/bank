@@ -6,8 +6,10 @@ function Lsheader() {
         <div className="header">
             <div>
                 <img src={ch} alt="CH" className="ch"></img>
-                </div>
-            <div className="txt"><p>LOGIN / SIGN UP</p></div>
+            </div>
+            <div className="txt">
+                <p>LOGIN / SIGN UP</p>
+            </div>
         </div>
     )
 }

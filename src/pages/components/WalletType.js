@@ -2,11 +2,21 @@ import React, { useState } from 'react'
 import ToggleDisplay from "./ToggleDisplay"
 import Transactions from "./Transactions"
 
-function WalletType({ name, balance, btn1, btn2, updateUser, user, today }) {
+function WalletType({ name, balance, transactions, btn1, btn2, updateUser, user, today }) {
     const [details, setDetails] = useState({ state: false, btnName: "" })
 
     const setBalance = (num) => num === undefined ? "-" : Number(num).toFixed(2)
-
+    console.log(details.state)
+    let toggle
+    if (details.state) {
+        toggle = <ToggleDisplay
+            name={name}
+            details={details}
+            setDetails={setDetails}
+            updateUser={updateUser}
+            user={user}
+        />
+    }
     return (
         <>
             <div className="account">
@@ -40,19 +50,9 @@ function WalletType({ name, balance, btn1, btn2, updateUser, user, today }) {
                         </button>
                     </div>
                 </div>
-                {!details.state
-                    ? <></>
-                    : <ToggleDisplay
-                        name={name}
-                        details={details}
-                        setDetails={setDetails}
-                        updateUser={updateUser}
-                        user={user}
-                        onClick={setDetails({ ...details, state: false })}
-                    />
-                }
+                {toggle}
             </div>
-            <Transactions trans={user.transactions} today={today} />
+            <Transactions trans={transactions} today={today} />
         </>
     )
 }

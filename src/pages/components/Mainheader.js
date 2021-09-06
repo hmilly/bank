@@ -14,11 +14,10 @@ function Mainheader({user}) {
     return (
         <>
             <div className="header">
-                <div className="headImg">
+                <div>
                     <img src={ch} alt="CH" className="ch"></img>
                 </div>
-                <ul className="txt">
-
+                <ul>
                     <li>
                         <Link to="/wallet">WALLET</Link>
                     </li>

@@ -16,6 +16,7 @@ import Signup from "./pages/components/Signup";
 import Wallet from "./pages/components/Wallet";
 import WalletType from "./pages/components/WalletType";
 
+// json-server --watch db.json --port 8080
 
 
 function App() {
@@ -95,6 +96,7 @@ function App() {
 						<WalletType
 							name={"savings"}
 							balance={user.savingsBal}
+							transactions={user.savingTran}
 							btn1={"PAY IN"}
 							btn2={"PAY OUT"}
 							updateUser={updateUser}
@@ -107,6 +109,7 @@ function App() {
 						<WalletType
 							name={"loans"}
 							balance={user.loansBal}
+							transactions={user.loansTran}
 							btn1={"TAKE LOAN"}
 							btn2={"PAY BACK"}
 							updateUser={updateUser}

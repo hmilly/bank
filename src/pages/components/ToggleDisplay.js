@@ -55,7 +55,7 @@ function ToggleDisplay({ name, details, setDetails, updateUser, user }) {
 
     const handleSubmit = (e) => {
         e.preventDefault()
-
+        setDetails({ ...details, state: false })
         // if (user) {
         //     (name === "savings")
         //         ? update("savings", user.savingsBal, savingsBal, savingTran)
@@ -86,18 +86,17 @@ function ToggleDisplay({ name, details, setDetails, updateUser, user }) {
     }
 
     return (
-        <div className="toggledButton" onClick={() => setDetails({ ...details, state: true })}>
-            <form>
-                <div>
-                    <p>£</p>
-                    <input
-                        type="number"
-                        min={0} step={0.01}
-                        onChange={(e) => setNum(handleNum(e.target.value))}></input>
-                </div>
-                <button className="toggledTrans" onClick={(e) => handleSubmit(e)}>details</button>
-            </form>
-        </div>
+        <form className="toggle">
+            <div>
+                <p>£</p>
+                <input
+                    type="number"
+                    min={0} step={0.10}
+                    onChange={(e) => setNum(handleNum(e.target.value))}>
+                </input>
+            </div>
+            <button className="transfer" onClick={(e) => handleSubmit(e)}>Transfer</button>
+        </form>
     )
 }
 

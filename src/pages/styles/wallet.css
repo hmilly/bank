@@ -71,14 +71,15 @@
     padding: 3%;
     text-align: right;
 }
-button.IN, button.TAKE, button.PAY{
+button.IN, button.TAKE, button.PAY,button.transfer{
     display: block;
     font-size: small;
-    margin: 10% 0;
+    margin: 5px 0;
     width: 100%;
     border-radius: 5px;
     background-color: limegreen;
     color: white;
+    cursor: pointer;
 }
 button.OUT{
     background-color: grey;
@@ -91,40 +92,42 @@ button.LOAN, button.BACK{
 .transfer{
     border: red solid 1px;
 }
-.toggledButton{
+.toggle{
     display: flex;
-    border-top: grey solid 1px;
+    border-top: rgba(128, 128, 128, 0.563) solid 1px;
     width: 93%;
     align-self: center;
     color: white;
-    padding: 3% 0;
+    padding: 10px 0;
 }
-.toggledButton > form, .toggledButton > form  > div{
+.toggle div{
     display: flex;
     width: 100%;
-    padding: 2%;
+    padding: 5px;
+    border-bottom: rgba(128, 128, 128, 0.563) solid 1px;
 }
 
-.toggledButton > form  > div{
-    border-bottom: grey solid 1px;
-}
-.toggledButton> form> div > p{
+.toggle p{
     margin: auto 0;
 }
-.toggledButton> form > div> input{
+.toggle input{
     margin: auto 1%;
     border-bottom: none;
+    color: white;
+    border: none;
+    background-color: rgba(36, 36, 36, 0);
+    outline: none;
 }
 
-.toggledButton> form > div> input::-webkit-inner-spin-button {
+.toggle input::-webkit-inner-spin-button {
     -webkit-appearance: none; 
 }
-.toggledTrans{
+.toggle button{
     color: white;
     background-color: orangered;
     margin: auto 0;
     width: 50%;
-    padding: 1%;
-    margin: 0 1%;
+    padding: 5px;
+    margin: 0 5px;
     cursor: pointer;
 }

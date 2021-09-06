@@ -38,8 +38,7 @@ function Form({ user, allUsers = [], btnName }) {
     }
 
     return (
-
-        <form className="login-body">
+        <form className="form">
             <label htmlFor="firstName">First name</label>
             <input type="text" name="firstName" required onChange={(e) => handleChange(e)}></input>
             <label htmlFor="lastName">Last name</label>
@@ -50,16 +49,17 @@ function Form({ user, allUsers = [], btnName }) {
             <input type="password" name="pword" required onChange={(e) => handleChange(e)}></input>
             <label htmlFor="password">Confirm Password</label>
             <input type="password" name="pwordmatch" required onChange={(e) => handleChange(e)}></input>
-            <div className="uploadDiv">
-                <div className="uploadbtndiv">
-                    <input type="file" /><p className="file">Upload avatar</p>
-                    <button className="uploadbtn">Upload</button>
+            <div className="upload">
+                <div className="uploadbtn">
+                    <input type="file" />
+                    <p className="file">Upload avatar</p>
+                    <button>Upload</button>
                 </div>
-                <div className="uploadimgdiv">
-                    <img className="usersimgchoice" src={man1} alt="man"></img>
+                <div className="uploadimg">
+                    <img src={man1} alt="man"></img>
                 </div>
             </div>
-            <button className="su-login"
+            <button id="su-login"
                 onClick={(e) => btnName === "Save" ? handleSave(e) : handleSubmit(e)}>
                 {btnName}
             </button>
