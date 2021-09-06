@@ -6,6 +6,7 @@ function ToggleDisplay({ name, details, setDetails, updateUser, user }) {
     const handleNum = (n) => {
         return +parseFloat(n).toFixed(2)
     }
+    console.log(details)
 
     // if (savingsTransfer.compName === "savings") {
     //     if (savingsTransfer.btnName === "in"){
@@ -27,7 +28,6 @@ function ToggleDisplay({ name, details, setDetails, updateUser, user }) {
     //         savingTran: newTempTrans
     //     })
     // } 
-
     // if (savingsTransfer.compName === "loans") {
     //     if (savingsTransfer.btnName === "in"){
     //         newTotBalance = handleNum(user.balance += num)

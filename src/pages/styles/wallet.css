@@ -91,9 +91,6 @@ button.LOAN, button.BACK{
 .transfer{
     border: red solid 1px;
 }
-
-
-
 .toggledButton{
     display: flex;
     border-top: grey solid 1px;
@@ -122,7 +119,6 @@ button.LOAN, button.BACK{
 .toggledButton> form > div> input::-webkit-inner-spin-button {
     -webkit-appearance: none; 
 }
-
 .toggledTrans{
     color: white;
     background-color: orangered;
@@ -132,4 +128,3 @@ button.LOAN, button.BACK{
     margin: 0 1%;
     cursor: pointer;
 }
-

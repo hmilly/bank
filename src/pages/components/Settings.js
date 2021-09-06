@@ -1,9 +1,9 @@
 import React from 'react'
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faArrowLeft } from "@fortawesome/free-solid-svg-icons"
-import SettingsForm from "./SettingsForm"
+import Form from "./Form"
 
-function Settings({setMenu}) {
+function Settings({ setMenu, user }) {
     return (
         <div className="settings">
             <div className="settingsTitle">
@@ -27,7 +27,8 @@ function Settings({setMenu}) {
                     <span className="slider round"></span>
                 </label>
             </div>
-            <SettingsForm />
+            <h4 className="user">User</h4>
+            <Form user={user} btnName={"Save"} />
         </div>
     )
 }

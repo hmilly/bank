@@ -3,11 +3,9 @@ import ToggleDisplay from "./ToggleDisplay"
 import Transactions from "./Transactions"
 
 function WalletType({ name, balance, btn1, btn2, updateUser, user, today }) {
-    const [details, setDetails] = useState(
-        { state: false, btnName: "" }
-    )
+    const [details, setDetails] = useState({ state: false, btnName: "" })
 
-    const balance = (num) => num === undefined ? "-" : Number(num).toFixed(2)
+    const setBalance = (num) => num === undefined ? "-" : Number(num).toFixed(2)
 
     return (
         <>
@@ -16,7 +14,7 @@ function WalletType({ name, balance, btn1, btn2, updateUser, user, today }) {
                     <div className={`${name}balance`}>
                         <div className="balance">
                             <h1 className="pounds">
-                                {balance(balance)}
+                                {setBalance(balance)}
                             </h1>
                         </div>
                         <p className="balanceP">Balance</p>
@@ -41,7 +39,6 @@ function WalletType({ name, balance, btn1, btn2, updateUser, user, today }) {
                             {btn2}
                         </button>
                     </div>
-
                 </div>
                 {!details.state
                     ? <></>
@@ -55,7 +52,7 @@ function WalletType({ name, balance, btn1, btn2, updateUser, user, today }) {
                     />
                 }
             </div>
-            <Transactions trans={balance} today={today} />
+            <Transactions trans={user.transactions} today={today} />
         </>
     )
 }

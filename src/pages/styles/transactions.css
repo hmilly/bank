@@ -10,7 +10,6 @@
     margin-top: 5%;
     width: 40%;
 }
-
 .tran_header{
     display: flex;
     justify-content: space-between;
@@ -18,7 +17,6 @@
     padding: 2% 0;
     border-bottom: rgba(128, 128, 128, 0.39) solid 1px;
 }
-
 .tran_txt{
     display: inline-block;
     margin: 1%;
@@ -27,11 +25,9 @@
     display: inline-block;
     margin: 1%;
 }
-
 .transactions{
     margin: 2% 8%;
 }
-
 .transaction{
     display: flex;
     justify-content: space-between;
@@ -39,13 +35,11 @@
     cursor: pointer;
     padding: 2%;
 }
-
 .transaction:hover{
     border-radius: 5px;
     background-color: grey;
     box-shadow: 3px 5px black;
 }
-
 .companyname{
     margin: 0;
 }
@@ -54,7 +48,6 @@
     justify-content: space-around;
     width: 25%;
 }
-
 .added, .minus{
     margin-top: 5%;
     font-size: smaller;
@@ -68,22 +61,9 @@
 .paymentinfo h5{
     margin: 0;
 }
-
 .today{
     text-align: left;
     font-size: smaller;
     font-weight: 100;
     margin: 0;
-}
-
-/* ------------------   styles for Settings tab -----------------*/
-
-
-.settings{
-    position: absolute;
-    top: 7%;
-    height: 100%;
-    width: 20%;
-    background: rgb(36,36,36);
-    background: linear-gradient(45deg, rgba(36,36,36,1) 0%, rgba(52,52,52,1) 0%, rgba(37,37,43,1) 100%);
 }

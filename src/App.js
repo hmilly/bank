@@ -83,7 +83,7 @@ function App() {
 						<Signup updateUser={updateUser} user={user} newUser={newUser} allUsers={allUsers} />
 					</Route>
 					<Route path="/wallet">
-						<Mainheader />
+						<Mainheader user={user} />
 						<Wallet
 							updateUser={updateUser}
 							user={user}
@@ -91,24 +91,24 @@ function App() {
 						/>
 					</Route>
 					<Route path="/savings">
-						<Mainheader />
+						<Mainheader user={user} />
 						<WalletType
 							name={"savings"}
 							balance={user.savingsBal}
-							btnName1={"PAY IN"}
-							btnName2={"PAY OUT"}
+							btn1={"PAY IN"}
+							btn2={"PAY OUT"}
 							updateUser={updateUser}
 							user={user}
 							today={today}
 						/>
 					</Route>
 					<Route path="/loans">
-						<Mainheader />
+						<Mainheader user={user} />
 						<WalletType
 							name={"loans"}
 							balance={user.loansBal}
-							btnName1={"TAKE LOAN"}
-							btnName2={"PAY BACK"}
+							btn1={"TAKE LOAN"}
+							btn2={"PAY BACK"}
 							updateUser={updateUser}
 							user={user}
 							today={today}

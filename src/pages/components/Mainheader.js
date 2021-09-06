@@ -3,12 +3,12 @@ import { Link } from "react-router-dom";
 import ch from "../img/CH.png"
 import Settings from "./Settings"
 
-function Mainheader() {
+function Mainheader({user}) {
 
     const [showMenu, setShowMenu] = useState(false)
     let menu;
     if (showMenu) {
-        menu = <Settings setMenu={setShowMenu} onClick={() => setShowMenu(true)} />
+        menu = <Settings setMenu={setShowMenu} user={user} onClick={() => setShowMenu(true)} />
     }
 
     return (
