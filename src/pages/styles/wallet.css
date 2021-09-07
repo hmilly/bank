@@ -23,13 +23,13 @@
     border-left: tomato solid 5px;
     border-radius: 2px;
 }
-.savingsbalance{
+.saving{
     width: 100%;
     margin: 2%;
     border-left: limegreen solid 5px;
     border-radius: 2px;
 }
-.loansbalance{
+.loan{
     width: 100%;
     margin: 2%;
     border-left: turquoise solid 5px;

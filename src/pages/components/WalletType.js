@@ -2,55 +2,48 @@ import React, { useState } from 'react'
 import ToggleDisplay from "./ToggleDisplay"
 import Transactions from "./Transactions"
 
-function WalletType({ name, balance, transactions, btn1, btn2, updateUser, user, today }) {
-    const [details, setDetails] = useState({ state: false, btnName: "" })
-
+function WalletType({ divColour, today, user, updateUser, balance, transactions, btn1, btn2 }) {
+    const [details, setDetails] = useState({ state: false, type: "" })
     const setBalance = (num) => num === undefined ? "-" : Number(num).toFixed(2)
-    console.log(details.state)
-    let toggle
-    if (details.state) {
-        toggle = <ToggleDisplay
-            name={name}
-            details={details}
-            setDetails={setDetails}
-            updateUser={updateUser}
-            user={user}
-        />
-    }
+
     return (
         <>
             <div className="account">
                 <div className="accountsData">
-                    <div className={`${name}balance`}>
+                    <div className={divColour}>
                         <div className="balance">
-                            <h1 className="pounds">
-                                {setBalance(balance)}
-                            </h1>
+                            <h1 className="pounds">{setBalance(balance)}</h1>
                         </div>
                         <p className="balanceP">Balance</p>
                     </div>
                     <div className="savingsbuttons">
                         <button className={btn1}
-                            onClick={() =>
-                                setDetails({
-                                    ...details,
-                                    state: !details.state,
-                                    btnName: "in"
-                                })}>
+                            onClick={() => setDetails({
+                                ...details,
+                                state: !details.state, type: "in"
+                            })}>
                             {btn1}
                         </button>
                         <button className={btn2}
                             onClick={() =>
                                 setDetails({
                                     ...details,
-                                    state: !details.state,
-                                    btnName: "out"
+                                    state: !details.state, type: "out"
                                 })}>
                             {btn2}
                         </button>
                     </div>
                 </div>
-                {toggle}
+                {details.state
+                    ? <ToggleDisplay
+                        name={divColour}
+                        details={details}
+                        user={user}
+                        setDetails={setDetails}
+                        updateUser={updateUser}
+                        bal={balance}
+                        transactions={transactions}
+                    /> : <></>}
             </div>
             <Transactions trans={transactions} today={today} />
         </>

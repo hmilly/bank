@@ -6,21 +6,15 @@ import "./pages/styles/headers.css";
 import "./pages/styles/login.css";
 import "./pages/styles/transactions.css";
 import "./pages/styles/wallet.css";
-
+// json-server --watch db.json --port 8080
 import Mainheader from "./pages/components/Mainheader"
 import Loginheader from "./pages/components/Loginheader"
-
 import LoginPage from "./pages/components/Loginpage"
 import Signup from "./pages/components/Signup";
-
 import Wallet from "./pages/components/Wallet";
 import WalletType from "./pages/components/WalletType";
 
-// json-server --watch db.json --port 8080
-
-
 function App() {
-
 	const todayObj = new Date();
 	let day = todayObj.getDate();
 	let month = todayObj.getMonth() + 1;
@@ -30,11 +24,18 @@ function App() {
 	const today = `${day}/${month}/${year}`;
 
 	const [user, setUser] = useState({})
+	const updateUser = (user) => setUser(user)
+	const [allUsers, setAllUsers] = useState([])
 
-	const updateUser = (user) => {
-		setUser(user)
-		console.log(user)
-	}
+	useEffect(() => {
+		const getUsers = () => {
+			fetch('http://localhost:8080/users')
+				.then(res => res.json())
+				.then(res => setAllUsers(res))
+				.catch((error) => console.log(error));
+		}
+		getUsers()
+	}, [])
 
 	const newUser = async (userDetails) => {
 		const u = {
@@ -60,66 +61,53 @@ function App() {
 			.catch((error) => console.log(error));
 	};
 
-	const [allUsers, setAllUsers] = useState([])
-	useEffect(() => {
-		const getUsers = () => {
-			fetch('http://localhost:8080/users')
-				.then(res => res.json())
-				.then(res => setAllUsers(res))
-				.catch((error) => console.log(error));
-		}
-		getUsers()
-	}, [])
-
 	return (
-		<>
-			<div className="App">
-				<Switch>
-					<Route exact path="/" >
-						<Loginheader />
-						<LoginPage updateUser={updateUser} user={user} allUsers={allUsers} />
-					</Route>
-					<Route path="/signup">
-						<Loginheader />
-						<Signup updateUser={updateUser} user={user} newUser={newUser} allUsers={allUsers} />
-					</Route>
-					<Route path="/wallet">
-						<Mainheader user={user} />
-						<Wallet
-							updateUser={updateUser}
-							user={user}
-							today={today}
-						/>
-					</Route>
-					<Route path="/savings">
-						<Mainheader user={user} />
-						<WalletType
-							name={"savings"}
-							balance={user.savingsBal}
-							transactions={user.savingTran}
-							btn1={"PAY IN"}
-							btn2={"PAY OUT"}
-							updateUser={updateUser}
-							user={user}
-							today={today}
-						/>
-					</Route>
-					<Route path="/loans">
-						<Mainheader user={user} />
-						<WalletType
-							name={"loans"}
-							balance={user.loansBal}
-							transactions={user.loansTran}
-							btn1={"TAKE LOAN"}
-							btn2={"PAY BACK"}
-							updateUser={updateUser}
-							user={user}
-							today={today}
-						/>
-					</Route>
-				</Switch>
-			</div>
-		</>
+		<div className="App">
+			<Switch>
+				<Route exact path="/" >
+					<Loginheader />
+					<LoginPage updateUser={updateUser} user={user} allUsers={allUsers} />
+				</Route>
+				<Route path="/signup">
+					<Loginheader />
+					<Signup updateUser={updateUser} user={user} newUser={newUser} allUsers={allUsers} />
+				</Route>
+				<Route path="/wallet">
+					<Mainheader user={user} />
+					<Wallet
+						updateUser={updateUser}
+						user={user}
+						today={today}
+					/>
+				</Route>
+				<Route path="/savings">
+					<Mainheader user={user} />
+					<WalletType
+						divColour={"saving"}
+						today={today}
+						user={user}
+						updateUser={updateUser}
+						balance={user.savingsBal}
+						transactions={user.savingTran}
+						btn1={"PAY IN"}
+						btn2={"PAY OUT"}
+					/>
+				</Route>
+				<Route path="/loans">
+					<Mainheader user={user} />
+					<WalletType
+						divColour={"loan"}
+						today={today}
+						user={user}
+						updateUser={updateUser}
+						balance={user.loansBal}
+						transactions={user.loansTran}
+						btn1={"PAY BACK"}
+						btn2={"TAKE LOAN"}
+					/>
+				</Route>
+			</Switch>
+		</div>
 	)
 }
 

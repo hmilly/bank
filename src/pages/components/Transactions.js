@@ -16,7 +16,6 @@ function Transactions({ trans, today }) {
                             {t.transName}
                             {today ? <p className="today">{today}</p> : <></>}
                         </h5>
-
                         <div className="paymentinfo">
                             {(t.minus)
                                 ? <><FontAwesomeIcon
