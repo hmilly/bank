@@ -24,7 +24,7 @@
           "plus": 15.99
         }
       ],
-      "savingTran": [
+      "savingsTran": [
         {
           "transName": "savings",
           "minus": 6.5
@@ -69,7 +69,7 @@
           "plus": 15.99
         }
       ],
-      "savingTran": [
+      "savingsTran": [
         {
           "transName": "savings",
           "minus": 6.5
@@ -106,7 +106,7 @@
           "minus": 50
         }
       ],
-      "savingTran": [
+      "savingsTran": [
         {
           "transName": "savings",
           "minus": 20
@@ -135,7 +135,7 @@
           "minus": 5.1
         }
       ],
-      "savingTran": [
+      "savingsTran": [
         {
           "transName": "savings",
           "minus": 20000
@@ -159,20 +159,7 @@
       "savingsBal": 0,
       "loansBal": 0,
       "transactions": [],
-      "savingTran": [],
-      "loansTran": []
-    },
-    {
-      "id": 6,
-      "firstName": "Holly",
-      "lastName": "Millard",
-      "email": "milstowers@gmail.com",
-      "pword": "a",
-      "balance": 10,
-      "savingsBal": 0,
-      "loansBal": 0,
-      "transactions": [],
-      "savingTran": [],
+      "savingsTran": [],
       "loansTran": []
     }
   ]

@@ -15,13 +15,6 @@ import Wallet from "./pages/components/Wallet";
 import WalletType from "./pages/components/WalletType";
 
 function App() {
-	const todayObj = new Date();
-	let day = todayObj.getDate();
-	let month = todayObj.getMonth() + 1;
-	const year = todayObj.getFullYear();
-	if (day < 10) { day = `0${day}` }
-	if (month < 10) { month = `0${month}` }
-	const today = `${day}/${month}/${year}`;
 
 	const [user, setUser] = useState({})
 	const updateUser = (user) => setUser(user)
@@ -77,18 +70,16 @@ function App() {
 					<Wallet
 						updateUser={updateUser}
 						user={user}
-						today={today}
 					/>
 				</Route>
 				<Route path="/savings">
 					<Mainheader user={user} />
 					<WalletType
 						divColour={"saving"}
-						today={today}
 						user={user}
 						updateUser={updateUser}
 						balance={user.savingsBal}
-						transactions={user.savingTran}
+						transactions={user.savingsTran}
 						btn1={"PAY IN"}
 						btn2={"PAY OUT"}
 					/>
@@ -97,7 +88,6 @@ function App() {
 					<Mainheader user={user} />
 					<WalletType
 						divColour={"loan"}
-						today={today}
 						user={user}
 						updateUser={updateUser}
 						balance={user.loansBal}

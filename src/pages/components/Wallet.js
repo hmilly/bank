@@ -1,15 +1,12 @@
 import React from 'react'
 import man1 from "../img/man_1.png"
 import Transactions from "./Transactions"
+import { today } from "./fns"
 
-function Wallet({ user, today }) {
+function Wallet({ user }) {
+    let balance, pound = 0, pence = 0
 
-    let balance, pound, pence
-
-    if (user.balance === undefined) {
-        pound = 0
-        pence = 0
-    } else {
+    if (user.balance !== undefined) {
         balance = Number(user.balance)
         pound = Math.trunc(balance)
         let bp = (balance - pound).toFixed(2)
@@ -35,7 +32,7 @@ function Wallet({ user, today }) {
                     </div>
                 </div>
             </div>
-            {(user.transactions) ? <Transactions trans={user.transactions} /> : <></>}
+            {(user.transactions) ? <Transactions transactions={user.transactions} /> : <></>}
         </>
     )
 }

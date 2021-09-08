@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import ToggleDisplay from "./ToggleDisplay"
 import Transactions from "./Transactions"
 
-function WalletType({ divColour, today, user, updateUser, balance, transactions, btn1, btn2 }) {
+function WalletType({ divColour, user, updateUser, balance, transactions, btn1, btn2 }) {
     const [details, setDetails] = useState({ state: false, type: "" })
     const setBalance = (num) => num === undefined ? "-" : Number(num).toFixed(2)
 
@@ -45,7 +45,7 @@ function WalletType({ divColour, today, user, updateUser, balance, transactions,
                         transactions={transactions}
                     /> : <></>}
             </div>
-            <Transactions trans={transactions} today={today} />
+            <Transactions transactions={transactions} from={divColour} type={details.type}/>
         </>
     )
 }
