@@ -8,8 +8,8 @@ const LoginPage = ({ updateUser, user, allUsers }) => {
     const [enteredPword, setEnteredPword] = useState("")
 
     useEffect(() => {
-        allUsers.find(e => { if (e.email === enteredEmail) updateUser(e) })
-    })
+        allUsers.map(e => { if (e.email === enteredEmail) updateUser(e) })
+    }, [enteredEmail])
 
     const handleSubmit = (e) => {
         e.preventDefault()

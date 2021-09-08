@@ -109,6 +109,7 @@ button.LOAN, button.BACK{
 
 .toggle p{
     margin: auto 0;
+    width: 100%;
 }
 .toggle input{
     margin: auto 1%;

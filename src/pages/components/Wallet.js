@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React from 'react'
 import man1 from "../img/man_1.png"
 import Transactions from "./Transactions"
 
@@ -28,7 +28,7 @@ function Wallet({ user, today }) {
                         <p className="balanceP">Balance</p>
                     </div>
                     <div className="userdate">
-                        <img src={man1} alt="user image"></img>
+                        <img src={man1} alt="user profile"></img>
                         <div>
                             <p>{today}</p>
                         </div>
