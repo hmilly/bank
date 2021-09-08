@@ -8,7 +8,7 @@ import Form from "./Form"
 //     sImg.src = URL.createObjectURL(choice);
 //   });
 
-function Signup({ newUser, allUsers }) {
+const Signup = ({ newUser, allUsers }) => {
     let history = useHistory();
     return (
         <div className="login">

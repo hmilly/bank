@@ -3,7 +3,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faPlus, faMinus } from "@fortawesome/free-solid-svg-icons"
 import { today } from "./fns"
 
-function Transactions({ transactions}) {
+const Transactions = ({ transactions}) => {
     return (
         <div className="transactions_main">
             <div className="tran_header">

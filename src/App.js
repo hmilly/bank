@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import { Route, Switch } from "react-router-dom";
-
 import "./pages/styles/App.css";
 import "./pages/styles/headers.css";
 import "./pages/styles/login.css";
@@ -14,21 +13,20 @@ import Signup from "./pages/components/Signup";
 import Wallet from "./pages/components/Wallet";
 import WalletType from "./pages/components/WalletType";
 
-function App() {
-
+const App = () => {
 	const [user, setUser] = useState({})
-	const updateUser = (user) => setUser(user)
 	const [allUsers, setAllUsers] = useState([])
 
+	const updateUser = (user) => setUser(user)
+
 	useEffect(() => {
-		const getUsers = () => {
+		const getUsers = () =>
 			fetch('http://localhost:8080/users')
 				.then(res => res.json())
 				.then(res => setAllUsers(res))
 				.catch((error) => console.log(error));
-		}
 		getUsers()
-	}, [])
+	}, [user])
 
 	const newUser = async (userDetails) => {
 		const u = {
@@ -53,7 +51,6 @@ function App() {
 			.then(res => setAllUsers([...allUsers, u]))
 			.catch((error) => console.log(error));
 	};
-
 	return (
 		<div className="App">
 			<Switch>
@@ -66,14 +63,14 @@ function App() {
 					<Signup updateUser={updateUser} user={user} newUser={newUser} allUsers={allUsers} />
 				</Route>
 				<Route path="/wallet">
-					<Mainheader user={user} />
+					<Mainheader user={user}/>
 					<Wallet
 						updateUser={updateUser}
 						user={user}
 					/>
 				</Route>
 				<Route path="/savings">
-					<Mainheader user={user} />
+					<Mainheader user={user}/>
 					<WalletType
 						divColour={"saving"}
 						user={user}

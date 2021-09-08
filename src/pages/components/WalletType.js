@@ -1,10 +1,16 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import ToggleDisplay from "./ToggleDisplay"
 import Transactions from "./Transactions"
 
-function WalletType({ divColour, user, updateUser, balance, transactions, btn1, btn2 }) {
+const WalletType = ({ divColour, user, updateUser, balance, transactions, btn1, btn2 }) => {
     const [details, setDetails] = useState({ state: false, type: "" })
-    const setBalance = (num) => num === undefined ? "-" : Number(num).toFixed(2)
+
+
+    useEffect(() => {
+       const setBalance = (num) => num === undefined ? "-" : Number(num).toFixed(2) 
+       setBalance(balance)
+    },[balance])
+    
 
     return (
         <>
@@ -12,7 +18,7 @@ function WalletType({ divColour, user, updateUser, balance, transactions, btn1, 
                 <div className="accountsData">
                     <div className={divColour}>
                         <div className="balance">
-                            <h1 className="pounds">{setBalance(balance)}</h1>
+                            <h1 className="pounds">{balance}</h1>
                         </div>
                         <p className="balanceP">Balance</p>
                     </div>

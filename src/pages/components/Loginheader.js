@@ -1,7 +1,7 @@
 import React from 'react'
 import ch from "../img/CH.png"
 
-function Lsheader() {
+const Lsheader = () => {
     return (
         <div className="header">
             <div>

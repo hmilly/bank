@@ -3,8 +3,7 @@ import { Link } from "react-router-dom";
 import ch from "../img/CH.png"
 import Settings from "./Settings"
 
-function Mainheader({user}) {
-
+const Mainheader = ({user}) => {
     const [showMenu, setShowMenu] = useState(false)
     let menu;
     if (showMenu) {

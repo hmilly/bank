@@ -2,9 +2,11 @@ import React from 'react'
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faArrowLeft } from "@fortawesome/free-solid-svg-icons"
 import Form from "./Form"
+import {block, round} from "./fns"
 
-function Settings({ setMenu, user }) {
-    return (
+const Settings = ({ setMenu, user}) => {
+    console.log(user)
+        return (
         <div className="settings">
             <div className="settingsTitle">
                 <a onClick={() => setMenu(false)}>
@@ -16,7 +18,7 @@ function Settings({ setMenu, user }) {
                 <p>Block account</p>
                 <label className="switch">
                     <input type="checkbox" />
-                    <span className="slider round"></span>
+                    <button className="slider round"></button>
                 </label>
             </div>
             <div className="rounds">
@@ -24,7 +26,7 @@ function Settings({ setMenu, user }) {
                     put into savings</p>
                 <label className="switch">
                     <input type="checkbox" />
-                    <span className="slider round"></span>
+                    <button className="slider round" onClick={(e)=>{round(e, user)}}></button>
                 </label>
             </div>
             <h4>User</h4>

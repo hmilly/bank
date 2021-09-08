@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import { useHistory } from 'react-router-dom'
 import man1 from "../img/man_1.png"
 
-function Form({ user, allUsers = [], btnName }) {
+const Form = ({ user, allUsers = [], btnName }) => {
     let history = useHistory();
     const orderComplete = () => {
         const obj = Object.fromEntries(Object.entries(userInfo).slice(0, 5))

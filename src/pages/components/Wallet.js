@@ -3,7 +3,7 @@ import man1 from "../img/man_1.png"
 import Transactions from "./Transactions"
 import { today } from "./fns"
 
-function Wallet({ user }) {
+const Wallet = ({ user }) => {
     let balance, pound = 0, pence = 0
 
     if (user.balance !== undefined) {
