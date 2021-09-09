@@ -1,13 +1,13 @@
 import React, { useState } from 'react'
 
-const ToggleDisplay = ({ name, details, setDetails, updateUser, bal, user, transactions }) => {
+const ToggleDisplay = ({ name, details, user, setDetails, setUser, bal, transactions }) => {
     const [num, setNum] = useState(0)
     const handleNum = (n) => +parseFloat(n).toFixed(2)
 
     const handleSubmit = (e, user, name, bal) => {
         e.preventDefault()
         if (details.type === "in") {
-            updateUser({
+            setUser({
                 ...user,
                 balance: handleNum(user.balance -= num),
                 [`${name}sBal`]: handleNum(bal += num),
@@ -15,7 +15,7 @@ const ToggleDisplay = ({ name, details, setDetails, updateUser, bal, user, trans
                 [`${name}sTran`]: [...transactions, { transName: name, plus: num }]
             })
         } else {
-            updateUser({
+            setUser({
                 ...user,
                 balance: handleNum(user.balance += num),
                 [`${name}sBal`]: handleNum(bal -= num),

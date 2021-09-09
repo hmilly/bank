@@ -1,14 +1,14 @@
 import React, { useState, useEffect } from 'react'
 import { useHistory, Link } from "react-router-dom";
 
-const LoginPage = ({ updateUser, user, allUsers }) => {
+const LoginPage = ({ setUser, user, allUsers }) => {
     const history = useHistory();
 
     const [enteredEmail, setEnteredEmail] = useState("")
     const [enteredPword, setEnteredPword] = useState("")
 
     useEffect(() => {
-        allUsers.map(e => { if (e.email === enteredEmail) updateUser(e) })
+        allUsers.map(e => { if (e.email === enteredEmail) setUser(e) })
     }, [enteredEmail])
 
     const handleSubmit = (e) => {

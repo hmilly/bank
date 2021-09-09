@@ -17,8 +17,6 @@ const App = () => {
 	const [user, setUser] = useState({})
 	const [allUsers, setAllUsers] = useState([])
 
-	const updateUser = (user) => setUser(user)
-
 	useEffect(() => {
 		const getUsers = () =>
 			fetch('http://localhost:8080/users')
@@ -56,25 +54,22 @@ const App = () => {
 			<Switch>
 				<Route exact path="/" >
 					<Loginheader />
-					<LoginPage updateUser={updateUser} user={user} allUsers={allUsers} />
+					<LoginPage setUser={setUser} user={user} allUsers={allUsers} />
 				</Route>
 				<Route path="/signup">
 					<Loginheader />
-					<Signup updateUser={updateUser} user={user} newUser={newUser} allUsers={allUsers} />
+					<Signup newUser={newUser} allUsers={allUsers} />
 				</Route>
 				<Route path="/wallet">
-					<Mainheader user={user}/>
-					<Wallet
-						updateUser={updateUser}
-						user={user}
-					/>
+					<Mainheader user={user} setUser={setUser}/>
+					<Wallet user={user} />
 				</Route>
 				<Route path="/savings">
-					<Mainheader user={user}/>
+					<Mainheader user={user} setUser={setUser}/>
 					<WalletType
 						divColour={"saving"}
 						user={user}
-						updateUser={updateUser}
+						setUser={setUser}
 						balance={user.savingsBal}
 						transactions={user.savingsTran}
 						btn1={"PAY IN"}
@@ -82,11 +77,11 @@ const App = () => {
 					/>
 				</Route>
 				<Route path="/loans">
-					<Mainheader user={user} />
+					<Mainheader user={user} setUser={setUser}/>
 					<WalletType
 						divColour={"loan"}
 						user={user}
-						updateUser={updateUser}
+						setUser={setUser}
 						balance={user.loansBal}
 						transactions={user.loansTran}
 						btn1={"PAY BACK"}
