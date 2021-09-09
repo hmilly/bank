@@ -1,5 +1,7 @@
 import React from 'react'
 import { useHistory } from "react-router-dom";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
+import { faArrowLeft } from "@fortawesome/free-solid-svg-icons"
 import Form from "./Form"
 
 // selectedImg.addEventListener("change", (e) => {
@@ -13,6 +15,9 @@ const Signup = ({ newUser, allUsers }) => {
     return (
         <div className="login">
             <section>
+                <button onClick={() => history.push("/")}>
+                    <FontAwesomeIcon icon={faArrowLeft} />
+                </button>
                 <p>Sign up</p>
             </section>
             <Form user={newUser} allUsers={allUsers} btnName={"Sign Up"} />

@@ -9,11 +9,22 @@
     border-radius: 10px;
 }
 .login section{
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height:auto;
+    justify-content: flex-end;
     border-bottom: orangered solid 1px;
 }
-.login p{
-    text-align: right;
-    margin: 6%;
+.login section p{
+    white-space: nowrap;
+    left: 0;
+    width: 80px;
+}
+.login section button{
+    width: 40px;
+    margin-left: 10px;
+    padding: 5px 0;
 }
 .login form, .form{
     margin: 5% 18%;

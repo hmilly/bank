@@ -3,12 +3,15 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faArrowLeft } from "@fortawesome/free-solid-svg-icons"
 import Form from "./Form"
 
-const Settings = ({ setMenu, user, setUser }) => {
+const Settings = ({ setMenu, user, setUser, blockBtns, setBlockBtns }) => {
 
     const [rounded, setRounded] = useState(false)
-    const block = (e, user, setUser) => {
+    const block = (e, blockBtns, setBlockBtns) => {
         e.preventDefault()
-        
+        setBlockBtns(!blockBtns)
+        console.log("set",
+        blockBtns
+        )
     }
 
     const round = (e, user, setUser) => {
@@ -27,16 +30,16 @@ const Settings = ({ setMenu, user, setUser }) => {
     return (
         <div className="settings">
             <div className="settingsTitle">
-                <a onClick={() => setMenu(false)}>
+                <button onClick={() => setMenu(false)}>
                     <FontAwesomeIcon icon={faArrowLeft} />
-                </a>
+                </button>
                 <h1>Settings</h1>
             </div>
             <div className="block">
                 <p>Block account</p>
                 <label className="switch">
                     <input type="checkbox" />
-                    <button className="slider round" onClick={(e) => { block(e, user, setUser) }}></button>
+                    <button className="slider round" onClick={(e) => { block(e, blockBtns, setBlockBtns) }}></button>
                 </label>
             </div>
             <div className="rounds">

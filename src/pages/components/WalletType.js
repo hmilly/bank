@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react'
 import ToggleDisplay from "./ToggleDisplay"
 import Transactions from "./Transactions"
 
-const WalletType = ({ divColour, user, setUser, balance, transactions, btn1, btn2 }) => {
+const WalletType = ({ divColour, user, setUser, balance, transactions, btn1, btn2, blockBtns }) => {
     const [details, setDetails] = useState({ state: false, type: "" })
 
     useEffect(() => {
@@ -10,7 +10,6 @@ const WalletType = ({ divColour, user, setUser, balance, transactions, btn1, btn
             num === undefined ? "-" : Number(num).toFixed(2)
         setBalance(balance)
     }, [balance])
-
 
     return (
         <>
@@ -24,6 +23,7 @@ const WalletType = ({ divColour, user, setUser, balance, transactions, btn1, btn
                     </div>
                     <div className="savingsbuttons">
                         <button className={btn1}
+                            disabled={blockBtns}
                             onClick={() => setDetails({
                                 ...details,
                                 state: !details.state, type: "in"
@@ -31,6 +31,7 @@ const WalletType = ({ divColour, user, setUser, balance, transactions, btn1, btn
                             {btn1}
                         </button>
                         <button className={btn2}
+                            disabled={blockBtns}
                             onClick={() =>
                                 setDetails({
                                     ...details,
@@ -49,9 +50,10 @@ const WalletType = ({ divColour, user, setUser, balance, transactions, btn1, btn
                         setUser={setUser}
                         bal={balance}
                         transactions={transactions}
+                        blockBtns={blockBtns}
                     /> : <></>}
             </div>
-            <Transactions transactions={transactions}/>
+            <Transactions transactions={transactions} />
         </>
     )
 }

@@ -6,9 +6,6 @@ if (day < 10) { day = `0${day}` }
 if (month < 10) { month = `0${month}` }
 const today = `${day}/${month}/${year}`;
 
-
-
-
 module.exports = {
     today
 }

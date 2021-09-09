@@ -3,13 +3,18 @@ import { Link } from "react-router-dom";
 import ch from "../img/CH.png"
 import Settings from "./Settings"
 
-const Mainheader = ({user, setUser}) => {
+const Mainheader = ({ user, setUser, blockBtns, setBlockBtns }) => {
     const [showMenu, setShowMenu] = useState(false)
     let menu;
     if (showMenu) {
-        menu = <Settings setUser={setUser} setMenu={setShowMenu} user={user} onClick={() => setShowMenu(true)} />
+        menu = <Settings
+            setMenu={setShowMenu}
+            user={user}
+            setUser={setUser}
+            blockBtns={blockBtns}
+            setBlockBtns={setBlockBtns}
+            onClick={() => setShowMenu(true)} />
     }
-
     return (
         <>
             <div className="header">

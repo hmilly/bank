@@ -8,16 +8,16 @@ const LoginPage = ({ setUser, user, allUsers }) => {
     const [enteredPword, setEnteredPword] = useState("")
 
     useEffect(() => {
-        allUsers.map(e => { if (e.email === enteredEmail) setUser(e) })
+        const u = allUsers.find(match => match.email === enteredEmail)
+        if (u) setUser(u)
+        else return
     }, [enteredEmail])
 
     const handleSubmit = (e) => {
         e.preventDefault()
-        if (user.email === enteredEmail.toLowerCase() && user.pword === enteredPword) {
-            history.push("/wallet")
-        } else {
-            window.alert("Incorrect details - please try again!")
-        }
+        user.email === enteredEmail.toLowerCase() && user.pword === enteredPword
+            ? history.push("/wallet")
+            : window.alert("Incorrect details - please try again!")
     }
 
     return (

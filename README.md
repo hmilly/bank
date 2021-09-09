@@ -1,12 +1,13 @@
 # Bank App
 
+I wanted to create a React app that works as per the requirements below, but without using the Context API.
+
+
+=================
 #### Design
-
-=========================
-
 https://www.figma.com/file/hPxZJx1pfv8uiOdB83kAVT/Banking-App?node-id=0%3A1
 
-=========================
+=================
 
 1. login/sign in page
     - Create account

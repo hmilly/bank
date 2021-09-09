@@ -58,12 +58,15 @@ li a:hover,  .header button:hover{
   justify-content: space-between;
   height: 8%;
 }
-.settingsTitle a{
+.settingsTitle button{
   font-size: xx-large;
   margin-top: 2%;
   color: white;
+  background-color:rgba(0, 0, 0, 0);
+  border: none;
+  cursor: pointer;
 }
-.settingsTitle a:hover{
+.settingsTitle button:hover{
   text-decoration: none;
   color: rgb(235, 222, 109);
 }

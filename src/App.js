@@ -16,6 +16,7 @@ import WalletType from "./pages/components/WalletType";
 const App = () => {
 	const [user, setUser] = useState({})
 	const [allUsers, setAllUsers] = useState([])
+	const [blockBtns, setBlockBtns] = useState(false)
 
 	useEffect(() => {
 		const getUsers = () =>
@@ -61,11 +62,11 @@ const App = () => {
 					<Signup newUser={newUser} allUsers={allUsers} />
 				</Route>
 				<Route path="/wallet">
-					<Mainheader user={user} setUser={setUser}/>
+					<Mainheader user={user} setUser={setUser} blockBtns={blockBtns} setBlockBtns={setBlockBtns}/>
 					<Wallet user={user} />
 				</Route>
 				<Route path="/savings">
-					<Mainheader user={user} setUser={setUser}/>
+					<Mainheader user={user} setUser={setUser} blockBtns={blockBtns} setBlockBtns={setBlockBtns}/>
 					<WalletType
 						divColour={"saving"}
 						user={user}
@@ -74,10 +75,11 @@ const App = () => {
 						transactions={user.savingsTran}
 						btn1={"PAY IN"}
 						btn2={"PAY OUT"}
+						blockBtns={blockBtns}
 					/>
 				</Route>
 				<Route path="/loans">
-					<Mainheader user={user} setUser={setUser}/>
+					<Mainheader user={user} setUser={setUser} blockBtns={blockBtns} setBlockBtns={setBlockBtns}/>
 					<WalletType
 						divColour={"loan"}
 						user={user}
@@ -86,6 +88,7 @@ const App = () => {
 						transactions={user.loansTran}
 						btn1={"PAY BACK"}
 						btn2={"TAKE LOAN"}
+						blockBtns={blockBtns}
 					/>
 				</Route>
 			</Switch>
