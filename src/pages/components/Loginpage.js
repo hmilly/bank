@@ -3,14 +3,12 @@ import { useHistory, Link } from "react-router-dom";
 
 const LoginPage = ({ setUser, user, allUsers }) => {
     const history = useHistory();
-
     const [enteredEmail, setEnteredEmail] = useState("")
     const [enteredPword, setEnteredPword] = useState("")
 
     useEffect(() => {
         const u = allUsers.find(match => match.email === enteredEmail)
         if (u) setUser(u)
-        else return
     }, [enteredEmail])
 
     const handleSubmit = (e) => {

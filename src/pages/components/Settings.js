@@ -6,16 +6,8 @@ import Form from "./Form"
 const Settings = ({ setMenu, user, setUser, blockBtns, setBlockBtns }) => {
 
     const [rounded, setRounded] = useState(false)
-    const block = (e, blockBtns, setBlockBtns) => {
-        e.preventDefault()
-        setBlockBtns(!blockBtns)
-        console.log("set",
-        blockBtns
-        )
-    }
 
-    const round = (e, user, setUser) => {
-        e.preventDefault()
+    const round = (user, setUser) => {
         let remainder = +(user.balance % 1).toFixed(2)
         setUser({ ...user, balance: user.balance -= remainder, savingsBal: user.savingsBal += remainder })
         setRounded(true)
@@ -35,21 +27,22 @@ const Settings = ({ setMenu, user, setUser, blockBtns, setBlockBtns }) => {
                 </button>
                 <h1>Settings</h1>
             </div>
+
             <div className="block">
                 <p>Block account</p>
                 <label className="switch">
-                    <input type="checkbox" />
-                    <button className="slider round" onClick={(e) => { block(e, blockBtns, setBlockBtns) }}></button>
+                    <input type="checkbox" onChange={() => setBlockBtns(!blockBtns)}></input>
+                    <span className="slider"></span>
                 </label>
             </div>
+
             <div className="rounds">
                 <p>Round expenses and
                     put into savings</p>
                 <label className="switch">
-                    <input type="checkbox" />
-                    <button className="slider round"
-                        disabled={rounded}
-                        onClick={(e) => { round(e, user, setUser) }}></button>
+                    <input type="checkbox" onChange={() => round(user, setUser)} checked={rounded}/>
+                    <span className="slider round"
+                        disabled={rounded}></span>
                 </label>
             </div>
             <h4>User</h4>
