@@ -53,7 +53,7 @@ const WalletType = ({ divColour, user, setUser, balance, transactions, btn1, btn
                         blockBtns={blockBtns}
                     /> : <></>}
             </div>
-            <Transactions transactions={transactions} />
+            <Transactions transactions={transactions} name={divColour} />
         </>
     )
 }

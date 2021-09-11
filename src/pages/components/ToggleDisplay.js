@@ -10,16 +10,16 @@ const ToggleDisplay = ({ name, details, user, setDetails, setUser, bal, transact
             ? setUser({
                 ...user,
                 balance: handleNum(user.balance -= num),
-                [`${name}sBal`]: handleNum(bal += num),
+                [`${name}Bal`]: handleNum(bal += num),
                 transactions: [...user.transactions, { transName: name, minus: num }],
-                [`${name}sTran`]: [...transactions, { transName: name, plus: num }]
+                [`${name}Tran`]: [...transactions, { transName: name, plus: num }]
             })
             : setUser({
                 ...user,
                 balance: handleNum(user.balance += num),
-                [`${name}sBal`]: handleNum(bal -= num),
+                [`${name}Bal`]: handleNum(bal -= num),
                 transactions: [...user.transactions, { transName: name, plus: num }],
-                [`${name}sTran`]: [...transactions, { transName: name, minus: num }]
+                [`${name}Tran`]: [...transactions, { transName: name, minus: num }]
             })
         setDetails({ ...details, state: false })
     }

@@ -3,7 +3,7 @@ import man1 from "../img/man_1.png"
 import Transactions from "./Transactions"
 import { today } from "./fns"
 
-const Wallet = ({ user }) => {
+const Wallet = ({ user}) => {
     let balance, pound = 0, pence = 0
 
     if (user.balance !== undefined) {
@@ -32,7 +32,7 @@ const Wallet = ({ user }) => {
                     </div>
                 </div>
             </div>
-            {(user.transactions) ? <Transactions transactions={user.transactions} /> : <></>}
+            {(user.transactions) ? <Transactions transactions={user.transactions} name={"wallet"}/> : <></>}
         </>
     )
 }

@@ -9,9 +9,15 @@ const Settings = ({ setMenu, user, setUser, blockBtns, setBlockBtns }) => {
 
     const round = (user, setUser) => {
         let remainder = +(user.balance % 1).toFixed(2)
-        setUser({ ...user, balance: user.balance -= remainder, savingsBal: user.savingsBal += remainder })
+        if (!rounded)
+            setUser({
+                ...user,
+                balance: user.balance -= remainder,
+                savingsBal: user.savingsBal += remainder,
+                transactions: [...user.transactions, { transName: "savings", minus: remainder }],
+                savingsTran: [...user.savingsTran, { transName: "savings", plus: remainder }]
+            })
         setRounded(true)
-        console.log("ran")
     }
 
     useEffect(() => {
@@ -40,7 +46,7 @@ const Settings = ({ setMenu, user, setUser, blockBtns, setBlockBtns }) => {
                 <p>Round expenses and
                     put into savings</p>
                 <label className="switch">
-                    <input type="checkbox" onChange={() => round(user, setUser)} checked={rounded}/>
+                    <input type="checkbox" onChange={() => round(user, setUser)} checked={rounded} />
                     <span className="slider round"
                         disabled={rounded}></span>
                 </label>

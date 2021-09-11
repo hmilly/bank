@@ -23,13 +23,13 @@
     border-left: tomato solid 5px;
     border-radius: 2px;
 }
-.saving{
+.savings{
     width: 100%;
     margin: 2%;
     border-left: limegreen solid 5px;
     border-radius: 2px;
 }
-.loan{
+.loans{
     width: 100%;
     margin: 2%;
     border-left: turquoise solid 5px;
@@ -109,11 +109,12 @@ button.LOAN, button.BACK{
 
 .toggle p{
     margin: auto 0;
-    width: 100%;
+    width: 20px;
 }
 .toggle input{
     margin: auto 1%;
     border-bottom: none;
+    width: 100%;
     color: white;
     border: none;
     background-color: rgba(36, 36, 36, 0);

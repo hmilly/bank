@@ -3,7 +3,21 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faPlus, faMinus } from "@fortawesome/free-solid-svg-icons"
 import { today } from "./fns"
 
-const Transactions = ({ transactions}) => {
+const Transactions = ({ transactions, name }) => {
+
+    const whichName = (n, t) => {
+        switch (n) {
+            case 'loans':
+                return t.minus ? "Loan taken" : "Thanks for payment";
+            case 'savings':
+                return t.minus ? "Debit to Wallet" : "Deposit from Wallet";
+            default:
+              //  let cap = t.transName.charAt(0).toUpperCase() + t.transName.slice(1);
+                return t.transName.charAt(0).toUpperCase() + t.transName.slice(1);
+        }
+    }
+
+
     return (
         <div className="transactions_main">
             <div className="tran_header">
@@ -14,7 +28,7 @@ const Transactions = ({ transactions}) => {
                 {transactions.map((t, i) => (
                     <div className="transaction" key={i}>
                         <h5 className="companyname">
-                            {t.minus ? "Paid out" : "Paid in"}
+                            {whichName(name, t)}
                             <p className="today">{today}</p>
                         </h5>
                         <div className="paymentinfo">

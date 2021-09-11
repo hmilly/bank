@@ -68,7 +68,7 @@ const App = () => {
 				<Route path="/savings">
 					<Mainheader user={user} setUser={setUser} blockBtns={blockBtns} setBlockBtns={setBlockBtns}/>
 					<WalletType
-						divColour={"saving"}
+						divColour={"savings"}
 						user={user}
 						setUser={setUser}
 						balance={user.savingsBal}
@@ -81,7 +81,7 @@ const App = () => {
 				<Route path="/loans">
 					<Mainheader user={user} setUser={setUser} blockBtns={blockBtns} setBlockBtns={setBlockBtns}/>
 					<WalletType
-						divColour={"loan"}
+						divColour={"loans"}
 						user={user}
 						setUser={setUser}
 						balance={user.loansBal}
