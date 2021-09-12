@@ -8,7 +8,7 @@ const Settings = ({ setMenu, user, setUser, blockBtns, setBlockBtns }) => {
     const [rounded, setRounded] = useState(false)
 
     const round = (user, setUser) => {
-        let remainder = +(user.balance % 1).toFixed(2)
+        let remainder = +((user.balance % 1).toFixed(2))
         if (!rounded)
             setUser({
                 ...user,

@@ -8,13 +8,14 @@
     padding: 0 1%;
     border-radius: 10px;
     margin-top: 10%;
-    width: 40%;
+    width: 400px;
 }
 .accountsData{
     display: flex;
     justify-content: flex-end;
     color: white;
     width: 100%;
+    height: auto;
 }
 
 .walletbalance{
@@ -24,13 +25,13 @@
     border-radius: 2px;
 }
 .savings{
-    width: 100%;
+    width: 70%;
     margin: 2%;
     border-left: limegreen solid 5px;
     border-radius: 2px;
 }
 .loans{
-    width: 100%;
+    width: 70%;
     margin: 2%;
     border-left: turquoise solid 5px;
     border-radius: 2px;
@@ -66,20 +67,22 @@
 }
 
 .savingsbuttons{
-    width: 40%;
-    margin: 2%;
-    padding: 3%;
-    text-align: right;
+    width: 30%;
+    height: auto;
 }
 button.IN, button.TAKE, button.PAY,button.transfer{
     display: block;
-    font-size: small;
-    margin: 5px 0;
-    width: 100%;
+    font-size: medium;
+    margin: 10% 0;
+    width: 95%;
+    height: 35%;
     border-radius: 5px;
     background-color: limegreen;
     color: white;
     cursor: pointer;
+}
+button.transfer{
+    height: 95%;
 }
 button.OUT{
     background-color: grey;

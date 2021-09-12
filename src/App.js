@@ -3,6 +3,7 @@ import { Route, Switch } from "react-router-dom";
 import "./pages/styles/App.css";
 import "./pages/styles/headers.css";
 import "./pages/styles/login.css";
+import "./pages/styles/settings.css";
 import "./pages/styles/transactions.css";
 import "./pages/styles/wallet.css";
 // json-server --watch db.json --port 8080

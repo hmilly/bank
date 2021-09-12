@@ -13,35 +13,61 @@
       "transactions": [
         {
           "transName": "Marks and Spencers",
-          "minus": 5.1
+          "minus": 5.1,
+          "date": "01.12.2020"
         },
         {
           "transName": "Aldi",
-          "minus": 20.5
+          "minus": 20.5,
+          "date": "12.12.2020"
         },
         {
           "transName": "ASOS",
-          "plus": 15.99
+          "plus": 15.99,
+          "date": "14.12.2020"
+        },
+        {
+          "transName": "Savings",
+          "plus": 6.5,
+          "date": "15.12.2020"
+        },
+        {
+          "transName": "savings",
+          "minus": 15.99,
+          "date": "25.12.2020"
+        },        {
+          "transName": "loan",
+          "minus": 25.44,
+          "date": "05.01.2021"
+        },
+        {
+          "transName": "loan",
+          "plus": 15.8,
+          "date": "11.12.2021"
         }
       ],
       "savingsTran": [
         {
           "transName": "savings",
-          "minus": 6.5
+          "minus": 6.5,
+          "date": "19.12.2020"
         },
         {
           "transName": "savings",
-          "plus": 2.99
+          "plus": 2.99,
+          "date": "25.12.2020"
         }
       ],
       "loansTran": [
         {
           "transName": "loan",
-          "plus": 25.44
+          "plus": 25.44,
+          "date": "05.01.2021"
         },
         {
           "transName": "loan",
-          "minus": 15.8
+          "minus": 15.8,
+          "date": "11.01.2021"
         }
       ]
     },
