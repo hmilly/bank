@@ -1,13 +1,12 @@
 import React from 'react'
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faPlus, faMinus } from "@fortawesome/free-solid-svg-icons"
-import { today } from "./fns"
 
 const Transactions = ({ transactions, name }) => {
     const whichName = (n, t) => {
         switch (n) {
             case 'loans':
-                return t.minus ? "Loan taken, Wallet Credited" : "Thanks for payment";
+                return t.minus ? "Loan taken - Wallet Credited" : "Thanks for payment";
             case 'savings':
                 return t.minus ? "Debit to Wallet" : "Deposit from Wallet";
             default:
@@ -25,19 +24,19 @@ const Transactions = ({ transactions, name }) => {
                 {transactions.map((t, i) => (
                     <div className="transaction" key={i}>
                         <h5 className="companyname">
-                            {whichName(name, t)}
                             <p className="today">{t.date}</p>
+                            {whichName(name, t)}
                         </h5>
                         <div className="paymentinfo">
                             {(t.minus)
                                 ? <><FontAwesomeIcon
                                     icon={faMinus}
                                     className="minus" />
-                                    <h5>£{t.minus.toFixed(2)}</h5></>
+                                    <h5>£{(t.minus).toFixed(2)}</h5></>
                                 : <><FontAwesomeIcon
                                     icon={faPlus}
                                     className="added" />
-                                    <h5>£{t.plus.toFixed(2)}</h5></>}
+                                    <h5>£{(t.plus).toFixed(2)}</h5></>}
                         </div>
                     </div>
                 )

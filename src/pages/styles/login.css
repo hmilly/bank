@@ -72,53 +72,6 @@
     color: orangered;
 }
 
-.upload{
-    display: flex;
-    align-items: center;
-    justify-items: flex-end;
-    padding: 4% 0;
-    width: 100%;
-}
-.uploadbtn{
-    width: 50%;
-    height: auto;
-}
-input[type="file"] {
-    font-size: 11px;
-    display: inline-block;
-    width: 40%;
-    height: 53%;
-    opacity: 0;
-    border: red solid 2px;
-    position: absolute;
-    left: 0;
-    top: 25%;
-    text-align: right;
-    cursor: pointer;
-}
-.uploadbtn p{
-    text-align: center;
-    font-size: 14px;
-}
-.uploadbtn button{
-    background-color: orangered;
-    border: orangered solid 1px;
-    width: 90%;
-    font-size: 12px;
-    padding: 6px 0;
-    height: auto;
-    cursor: pointer;
-}
-
-.uploadimg{
-    width: 50%;
-    height: auto;
-}
-.uploadimg img{
-    float: right;
-    width: 70px;
-    height: auto;
-}
 #su-login{
     background-color: orangered;
     border: orangered solid 1px;

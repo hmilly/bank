@@ -16,6 +16,7 @@
     flex-direction: row;
     justify-content: space-between;
     height: 8%;
+    margin-top: 10%;
   }
   .settingsTitle button{
     font-size: xx-large;

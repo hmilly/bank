@@ -4,7 +4,6 @@ import Transactions from "./Transactions"
 import { today } from "./fns"
 
 const Wallet = ({ user }) => {
-    console.log(today, typeof(today))
     let balance, pound = 0, pence = 0
 
     if (user.balance !== undefined) {

@@ -33,7 +33,6 @@ const Settings = ({ setMenu, user, setUser, blockBtns, setBlockBtns }) => {
                 </button>
                 <h1>Settings</h1>
             </div>
-
             <div className="block">
                 <p>Block account</p>
                 <label className="switch">
@@ -41,7 +40,6 @@ const Settings = ({ setMenu, user, setUser, blockBtns, setBlockBtns }) => {
                     <span className="slider"></span>
                 </label>
             </div>
-
             <div className="rounds">
                 <p>Round expenses and
                     put into savings</p>
@@ -52,7 +50,7 @@ const Settings = ({ setMenu, user, setUser, blockBtns, setBlockBtns }) => {
                 </label>
             </div>
             <h4>User</h4>
-            <Form user={user} btnName={"Save"} />
+            <Form user={user} btnName={"Save"} setUser={setUser} />
         </div>
     )
 }
