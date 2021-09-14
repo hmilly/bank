@@ -3,7 +3,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faArrowLeft } from "@fortawesome/free-solid-svg-icons"
 import Form from "./Form"
 
-const Settings = ({ setMenu, user, setUser, blockBtns, setBlockBtns }) => {
+const Settings = ({ setMenu, user, setUser, allUsers, setAllUsers, blockBtns, setBlockBtns }) => {
 
     const [rounded, setRounded] = useState(false)
 
@@ -50,7 +50,7 @@ const Settings = ({ setMenu, user, setUser, blockBtns, setBlockBtns }) => {
                 </label>
             </div>
             <h4>User</h4>
-            <Form user={user} btnName={"Save"} setUser={setUser} />
+            <Form user={user} btnName={"Save"} setUser={setUser} allUsers={allUsers} setAllUsers={setAllUsers} />
         </div>
     )
 }

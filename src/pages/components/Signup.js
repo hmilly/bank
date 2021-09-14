@@ -20,7 +20,7 @@ const Signup = ({ newUser, allUsers }) => {
                 </button>
                 <p>Sign up</p>
             </section>
-            <Form user={newUser} allUsers={allUsers} btnName={"Sign Up"} />
+            <Form setNewUser={newUser} allUsers={allUsers} btnName={"Sign Up"} />
         </div>
     )
 }

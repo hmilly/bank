@@ -28,29 +28,6 @@ const App = () => {
 		getUsers()
 	}, [user])
 
-	const newUser = async (userDetails) => {
-		const u = {
-			...userDetails,
-			"balance": 10,
-			"savingsBal": 0,
-			"loansBal": -0,
-			"transactions": [],
-			"savingTran": [],
-			"loansTran": []
-		}
-		const configObject = await {
-			method: "POST",
-			headers: {
-				"Content-Type": "application/json",
-				Accept: "application/json",
-			},
-			body: JSON.stringify(u),
-		};
-		await fetch(`http://localhost:8080/users`, configObject)
-			.then((res) => (res.ok ? res.json() : "Oops we couldn't update that!"))
-			.then(res => setAllUsers([...allUsers, u]))
-			.catch((error) => console.log(error));
-	};
 	return (
 		<div className="App">
 			<Switch>
@@ -63,11 +40,25 @@ const App = () => {
 					<Signup newUser={newUser} allUsers={allUsers} />
 				</Route>
 				<Route path="/wallet">
-					<Mainheader user={user} setUser={setUser} blockBtns={blockBtns} setBlockBtns={setBlockBtns}/>
+					<Mainheader
+						user={user}
+						setUser={setUser}
+						blockBtns={blockBtns}
+						setBlockBtns={setBlockBtns}
+						allUsers={allUsers}
+						setAllUsers={setAllUsers}
+					/>
 					<Wallet user={user} />
 				</Route>
 				<Route path="/savings">
-					<Mainheader user={user} setUser={setUser} blockBtns={blockBtns} setBlockBtns={setBlockBtns}/>
+					<Mainheader
+						user={user}
+						setUser={setUser}
+						blockBtns={blockBtns}
+						setBlockBtns={setBlockBtns}
+						allUsers={allUsers}
+						setAllUsers={setAllUsers}
+					/>
 					<WalletType
 						divColour={"savings"}
 						user={user}
@@ -80,7 +71,14 @@ const App = () => {
 					/>
 				</Route>
 				<Route path="/loans">
-					<Mainheader user={user} setUser={setUser} blockBtns={blockBtns} setBlockBtns={setBlockBtns}/>
+					<Mainheader
+						user={user}
+						setUser={setUser}
+						blockBtns={blockBtns}
+						setBlockBtns={setBlockBtns}
+						allUsers={allUsers}
+						setAllUsers={setAllUsers}
+					/>
 					<WalletType
 						divColour={"loans"}
 						user={user}

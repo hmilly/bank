@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import ch from "../img/CH.png"
 import Settings from "./Settings"
 
-const Mainheader = ({ user, setUser, blockBtns, setBlockBtns }) => {
+const Mainheader = ({ user, setUser, blockBtns, setBlockBtns, allUsers, setAllUsers }) => {
     const [showMenu, setShowMenu] = useState(false)
     let menu;
     if (showMenu) {
@@ -13,6 +13,8 @@ const Mainheader = ({ user, setUser, blockBtns, setBlockBtns }) => {
             setUser={setUser}
             blockBtns={blockBtns}
             setBlockBtns={setBlockBtns}
+            allUsers={allUsers}
+            setAllUsers={setAllUsers}
             onClick={() => setShowMenu(true)} />
     }
     return (

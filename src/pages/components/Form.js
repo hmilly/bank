@@ -1,18 +1,25 @@
 import React, { useState } from 'react'
 import { useHistory } from 'react-router-dom'
+import { setNewUser, updateUser } from "./fns"
 
-const Form = ({ user, setUser, allUsers = [], btnName }) => {
+const Form = ({ setUser, allUsers = [], btnName, allUsers, setAllUsers }) => {
     const [userInfo, setUserInfo] = useState({})
 
     let history = useHistory();
-    const orderComplete = (btnName, u) => {
+
+    const addUser = () => {
         const obj = Object.fromEntries(Object.entries(userInfo).slice(0, 5))
+        setNewUser(obj, allUsers, setAllUsers)
+        history.push("/")
+    }
+
+    const modifyUser = (u, btnName) => {
+        const obj = Object.fromEntries(Object.entries(u).slice(0, 5))
 
         if (btnName === "Submit") {
-            user(obj)
-            history.push("/")
+            updateUser(obj, allUsers, setAllUsers)
         } else {
-            
+            window.alert("Email entered is currently in use, please re-enter and try again")
         }
     }
 
@@ -32,8 +39,8 @@ const Form = ({ user, setUser, allUsers = [], btnName }) => {
             window.alert("You passwords do not match please try again")
         } else if (data.length === 6 && data.every(o => o !== "")) {
             const u = allUsers.find(u => u.email.toLowerCase() === userInfo.email.toLowerCase())
-            !u ? orderComplete(btnName, u)
-                : window.alert("Email entered is currently in use, please re-enter and try again")
+            !u ? addUser(userInfo)
+                : modifyUser(u, btnName)
         }
     }
 
