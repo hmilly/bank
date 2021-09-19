@@ -4,12 +4,13 @@
     background: rgb(36,36,36);
     background: linear-gradient(45deg, rgba(36,36,36,1) 0%, rgba(52,52,52,1) 0%, rgba(37,37,43,1) 100%);
     align-self: flex-end;
-    height: 100vh;
+    height: 93vh;
     width: 220px;
     top: 7%;
     color: white;
-    padding: 2%;
+    padding:  0 2%;
     border-top: orangered solid 3px;
+    overflow: hidden;
   }
   .settingsTitle, .block, .rounds{
     display: flex;

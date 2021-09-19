@@ -17,9 +17,15 @@ const Form = ({ user, setUser, allUsers = [], setAllUsers, btnName }) => {
     }
 
     const modifyUser = (u) => {
-        updateUser({ ...userInfo, id: u.id }, allUsers, setAllUsers, user, setUser)
+        const editedUser = {
+            ...user,
+            id: u.id,
+            firstName: u.firstName,
+            lastName: u.lastName,
+            pword: u.pword
+        }
+        updateUser(editedUser, setUser)
     }
-
 
     const handleChange = (e) => {
         const name = e.target.name
@@ -46,7 +52,7 @@ const Form = ({ user, setUser, allUsers = [], setAllUsers, btnName }) => {
             <input type="text" name="firstName" required onChange={(e) => handleChange(e)}></input>
             <label htmlFor="lastName">Last name</label>
             <input type="text" name="lastName" required onChange={(e) => handleChange(e)}></input>
-            <label htmlFor="email">Email</label>
+            <label htmlFor="email">{btnName === "Save" ? `Email (for user varification only)` : `Email`}</label>
             <input type="email" name="email" required onChange={(e) => handleChange(e)}></input>
             <label htmlFor="password">Password</label>
             <input type="password" name="pword" required onChange={(e) => handleChange(e)}></input>

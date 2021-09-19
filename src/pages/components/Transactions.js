@@ -3,8 +3,8 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faPlus, faMinus } from "@fortawesome/free-solid-svg-icons"
 
 const Transactions = ({ transactions, name }) => {
-    const whichName = (n, t) => {
-        switch (n) {
+    const whichName = (t) => {
+        switch (name) {
             case 'loans':
                 return t.minus ? "Loan taken - Wallet Credited" : "Thanks for payment";
             case 'savings':
@@ -25,7 +25,7 @@ const Transactions = ({ transactions, name }) => {
                     <div className="transaction" key={i}>
                         <h5 className="companyname">
                             <p className="today">{t.date}</p>
-                            {whichName(name, t)}
+                            {whichName(t)}
                         </h5>
                         <div className="paymentinfo">
                             {(t.minus)

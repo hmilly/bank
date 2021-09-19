@@ -6,10 +6,9 @@
       "lastName": "Muck",
       "email": "lmuck@gmail.com",
       "pword": "l",
-      "avatar": "",
-      "balance": 100.99,
-      "savingsBal": 100.5,
-      "loansBal": -10,
+      "balance": 96,
+      "savingsBal": 101.75,
+      "loansBal": 0,
       "transactions": [
         {
           "transName": "Marks and Spencers",
@@ -27,7 +26,7 @@
           "date": "14.12.2020"
         },
         {
-          "transName": "Savings",
+          "transName": "savings",
           "plus": 6.5,
           "date": "15.12.2020"
         },
@@ -42,9 +41,89 @@
           "date": "05.01.2021"
         },
         {
-          "transName": "loan",
-          "plus": 15.8,
-          "date": "11.12.2021"
+          "transName": "savings",
+          "plus": 7.49,
+          "date": "19/09/2021"
+        },
+        {
+          "transName": "savings",
+          "plus": 0.05,
+          "date": "19/09/2021"
+        },
+        {
+          "transName": "savings",
+          "minus": 0.05,
+          "date": "19/09/2021"
+        },
+        {
+          "transName": "savings",
+          "plus": 0.5,
+          "date": "19/09/2021"
+        },
+        {
+          "transName": "savings",
+          "minus": 0.5,
+          "date": "19/09/2021"
+        },
+        {
+          "transName": "savings",
+          "plus": 0.5,
+          "date": "19/09/2021"
+        },
+        {
+          "transName": "savings",
+          "minus": 0.5,
+          "date": "19/09/2021"
+        },
+        {
+          "transName": "savings",
+          "plus": 0.5,
+          "date": "19/09/2021"
+        },
+        {
+          "transName": "savings",
+          "minus": 0.5,
+          "date": "19/09/2021"
+        },
+        {
+          "transName": "savings",
+          "plus": 0.75,
+          "date": "19/09/2021"
+        },
+        {
+          "transName": "savings",
+          "minus": 0.75,
+          "date": "19/09/2021"
+        },
+        {
+          "transName": "savings",
+          "minus": 10,
+          "date": "19/09/2021"
+        },
+        {
+          "transName": "savings",
+          "plus": 7,
+          "date": "19/09/2021"
+        },
+        {
+          "transName": "loans",
+          "plus": 10,
+          "date": "19/09/2021"
+        },
+        {
+          "transName": "loans",
+          "minus": 10,
+          "date": "19/09/2021"
+        },
+        {
+          "transName": "savings",
+          "minus": 0.1,
+          "date": "19/09/2021"
+        },
+        {
+          "transName": "savings",
+          "minus": 0.9,
+          "date": "19/09/2021"
         }
       ],
       "savingsTran": [
@@ -57,6 +136,81 @@
           "transName": "savings",
           "plus": 2.99,
           "date": "25.12.2020"
+        },
+        {
+          "transName": "savings",
+          "minus": 7.49,
+          "date": "19/09/2021"
+        },
+        {
+          "transName": "savings",
+          "minus": 0.05,
+          "date": "19/09/2021"
+        },
+        {
+          "transName": "savings",
+          "plus": 0.05,
+          "date": "19/09/2021"
+        },
+        {
+          "transName": "savings",
+          "minus": 0.5,
+          "date": "19/09/2021"
+        },
+        {
+          "transName": "savings",
+          "plus": 0.5,
+          "date": "19/09/2021"
+        },
+        {
+          "transName": "savings",
+          "minus": 0.5,
+          "date": "19/09/2021"
+        },
+        {
+          "transName": "savings",
+          "plus": 0.5,
+          "date": "19/09/2021"
+        },
+        {
+          "transName": "savings",
+          "minus": 0.5,
+          "date": "19/09/2021"
+        },
+        {
+          "transName": "savings",
+          "plus": 0.5,
+          "date": "19/09/2021"
+        },
+        {
+          "transName": "savings",
+          "minus": 0.75,
+          "date": "19/09/2021"
+        },
+        {
+          "transName": "savings",
+          "plus": 0.75,
+          "date": "19/09/2021"
+        },
+        {
+          "transName": "savings",
+          "plus": 10,
+          "date": "19/09/2021"
+        },
+        {
+          "transName": "savings",
+          "minus": 7,
+          "date": "19/09/2021"
+        },
+        {
+          "transName": "savings",
+          "plus": 0.1,
+          "date": "19/09/2021"
+        },
+        {
+          "transName": "savings",
+          "plus": 0.9,
+          "date": "19/09/2021"
         }
       ],
       "loansTran": [
@@ -66,9 +220,14 @@
           "date": "05.01.2021"
         },
         {
-          "transName": "loan",
-          "minus": 15.8,
-          "date": "11.01.2021"
+          "transName": "loans",
+          "minus": 10,
+          "date": "19/09/2021"
+        },
+        {
+          "transName": "loans",
+          "plus": 10,
+          "date": "19/09/2021"
         }
       ]
     },
@@ -78,7 +237,6 @@
       "lastName": "Muck",
       "email": "mmuck@gmail.com",
       "pword": "m",
-      "avatar": "",
       "balance": 599.01,
       "savingsBal": 15,
       "loansBal": -10,
@@ -123,7 +281,6 @@
       "lastName": "Muck",
       "email": "hmuck@gmail.com",
       "pword": "h",
-      "avatar": "",
       "balance": 101,
       "savingsBal": 0,
       "loansBal": -1,
@@ -152,20 +309,29 @@
       "lastName": "Muck",
       "email": "fmuck@gmail.com",
       "pword": "f",
-      "avatar": "",
-      "balance": 122,
+      "balance": 60,
       "savingsBal": 2000,
       "loansBal": 0,
       "transactions": [
         {
           "transName": "Black market",
           "minus": 5.1
+        },
+        {
+          "transName": "savings",
+          "minus": 10,
+          "date": "19/09/2021"
         }
       ],
       "savingsTran": [
         {
           "transName": "savings",
           "minus": 20000
+        },
+        {
+          "transName": "savings",
+          "plus": 10,
+          "date": "19/09/2021"
         }
       ],
       "loansTran": [
@@ -181,7 +347,6 @@
       "lastName": "Parker",
       "email": "pp@gmail.com",
       "pword": "lm",
-      "pwordmatch": "lm",
       "balance": 10,
       "savingsBal": 0,
       "loansBal": 0,

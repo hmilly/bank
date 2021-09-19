@@ -7,7 +7,7 @@ const WalletType = ({ divColour, user, setUser, balance, transactions, btn1, btn
 
     useEffect(() => {
         const setBalance = (num) =>
-            num === undefined ? "-" : Number(num).toFixed(2)
+            num === undefined ? "-" : +parseFloat(num).toFixed(2) 
         setBalance(balance)
     }, [balance])
 

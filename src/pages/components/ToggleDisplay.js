@@ -1,43 +1,46 @@
 import React, { useState } from 'react'
-import { today } from "./fns"
+import { today, updateUser } from "./fns"
 
 const ToggleDisplay = ({ name, details, user, setDetails, setUser, bal, transactions, blockBtns }) => {
     const [num, setNum] = useState(0)
-    const handleNum = (n) => +(parseFloat(n).toFixed(2))
 
     const setin = () => {
-        setUser({
+        updateUser({
             ...user,
-            balance: handleNum(user.balance -= num),
-            [`${name}Bal`]: handleNum(bal += num),
+            balance: user.balance - num,
+            [`${name}Bal`]: bal + num,
             transactions: [...user.transactions, { transName: name, minus: num, date: today }],
             [`${name}Tran`]: [...transactions, { transName: name, plus: num, date: today }]
-        })
+        }, setUser)
     }
 
     const setout = () => {
-        setUser({
+        updateUser({
             ...user,
-            balance: handleNum(user.balance += num),
-            [`${name}Bal`]: handleNum(bal -= num),
+            balance: user.balance + num,
+            [`${name}Bal`]: bal - num,
             transactions: [...user.transactions, { transName: name, plus: num, date: today }],
             [`${name}Tran`]: [...transactions, { transName: name, minus: num, date: today }]
-        })
+        }, setUser)
     }
 
     const handleSubmit = (e) => {
         e.preventDefault()
-        if (name === "savings" && details.type === "out")
-            handleNum(user.savingsBal -= num) < 0
-                ? window.alert("Not enough money in savings!")
-                : setout()
-        else if (name === "loans" && details.type === "in")
-            handleNum(user.loansBal += num) > 0
-                ? window.alert("Amount exceeds loan value!")
-                : setin()
-        else if (name === "savings" && details.type === "in") setin()
-        else if (name === "loans" && details.type === "out") setout()
-        setDetails({ ...details, state: false })
+        if (num > 0) {
+            if (name === "savings" && details.type === "out")
+                user.savingsBal - num < 0
+                    ? window.alert("Not enough money in savings!")
+                    : setout()
+            else if (name === "savings" && details.type === "in") setin()
+            else if (name === "loans" && details.type === "out") setout()
+            else if (name === "loans" && details.type === "in")
+                user.loansBal + num > 0
+                    ? window.alert("Amount exceeds loan value!")
+                    : setin()
+            setDetails({ ...details, state: false })
+        } else {
+            window.alert("Please enter a number above 0")
+        }
     }
 
     return (
@@ -47,7 +50,7 @@ const ToggleDisplay = ({ name, details, user, setDetails, setUser, bal, transact
                 <input
                     type="number"
                     min={0} step={0.10}
-                    onChange={(e) => setNum(handleNum(e.target.value))}>
+                    onChange={(e) => setNum(+parseFloat(e.target.value).toFixed(2) )}>
                 </input>
             </div>
             <button className="transfer"

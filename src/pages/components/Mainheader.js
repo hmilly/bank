@@ -6,6 +6,7 @@ import Settings from "./Settings"
 const Mainheader = ({ user, setUser, blockBtns, setBlockBtns, allUsers, setAllUsers }) => {
     const [showMenu, setShowMenu] = useState(false)
     let menu;
+    
     if (showMenu) {
         menu = <Settings
             setMenu={setShowMenu}

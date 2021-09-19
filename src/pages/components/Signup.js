@@ -4,12 +4,6 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faArrowLeft } from "@fortawesome/free-solid-svg-icons"
 import Form from "./Form"
 
-// selectedImg.addEventListener("change", (e) => {
-//     let choice = e.target.files[0];
-//     const sImg = document.querySelector(".userimg");
-//     sImg.src = URL.createObjectURL(choice);
-//   });
-
 const Signup = ({ user, setUser, allUsers }) => {
     let history = useHistory();
     return (
