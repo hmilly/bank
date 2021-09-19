@@ -37,7 +37,7 @@ const App = () => {
 				</Route>
 				<Route path="/signup">
 					<Loginheader />
-					<Signup newUser={newUser} allUsers={allUsers} />
+					<Signup user={user} setUser={setUser} allUsers={allUsers} />
 				</Route>
 				<Route path="/wallet">
 					<Mainheader

@@ -2,25 +2,22 @@ import React, { useState } from 'react'
 import { useHistory } from 'react-router-dom'
 import { setNewUser, updateUser } from "./fns"
 
-const Form = ({ setUser, allUsers = [], btnName, allUsers, setAllUsers }) => {
+const Form = ({ user, setUser, allUsers = [], setAllUsers, btnName }) => {
     const [userInfo, setUserInfo] = useState({})
-
     let history = useHistory();
 
-    const addUser = () => {
-        const obj = Object.fromEntries(Object.entries(userInfo).slice(0, 5))
-        setNewUser(obj, allUsers, setAllUsers)
-        history.push("/")
-    }
-
-    const modifyUser = (u, btnName) => {
-        const obj = Object.fromEntries(Object.entries(u).slice(0, 5))
-
-        if (btnName === "Submit") {
-            updateUser(obj, allUsers, setAllUsers)
+    const addUser = (u) => {
+        if (!u) {
+            const obj = Object.fromEntries(Object.entries(userInfo).slice(0, 5))
+            setNewUser(obj, allUsers, setAllUsers)
+            history.push("/")
         } else {
             window.alert("Email entered is currently in use, please re-enter and try again")
         }
+    }
+
+    const modifyUser = (u) => {
+        updateUser({ ...userInfo, id: u.id }, allUsers, setAllUsers, user, setUser)
     }
 
 
@@ -39,15 +36,8 @@ const Form = ({ setUser, allUsers = [], btnName, allUsers, setAllUsers }) => {
             window.alert("You passwords do not match please try again")
         } else if (data.length === 6 && data.every(o => o !== "")) {
             const u = allUsers.find(u => u.email.toLowerCase() === userInfo.email.toLowerCase())
-            !u ? addUser(userInfo)
-                : modifyUser(u, btnName)
+            btnName === "Save" ? modifyUser(u) : addUser(u)
         }
-    }
-
-    const handleSave = (e, setUser) => {
-        e.preventDefault()
-        setUser({})
-        console.log("update user")
     }
 
     return (

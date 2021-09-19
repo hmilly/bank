@@ -50,7 +50,13 @@ const Settings = ({ setMenu, user, setUser, allUsers, setAllUsers, blockBtns, se
                 </label>
             </div>
             <h4>User</h4>
-            <Form user={user} btnName={"Save"} setUser={setUser} allUsers={allUsers} setAllUsers={setAllUsers} />
+            <Form
+                user={user}
+                setUser={setUser}
+                allUsers={allUsers}
+                setAllUsers={setAllUsers}
+                btnName={"Save"}
+            />
         </div>
     )
 }

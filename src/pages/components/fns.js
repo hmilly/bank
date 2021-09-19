@@ -30,28 +30,27 @@ const setNewUser = async (userDetails, allUsers, setAllUsers) => {
         .catch((error) => console.log(error));
 };
 
-const updateUser = async (userDetails, allUsers, setAllUsers) => {
-    const u = {
-        ...userDetails,
-        "balance": 10,
-        "savingsBal": 0,
-        "loansBal": -0,
-        "transactions": [],
-        "savingTran": [],
-        "loansTran": []
-    }
-    const configObject = await {
-        method: "PATCH",
-        headers: {
-            "Content-Type": "application/json",
-            Accept: "application/json",
-        },
-        body: JSON.stringify(u),
-    };
-    await fetch(`http://localhost:8080/users`, configObject)
-        .then((res) => (res.ok ? res.json() : "Oops we couldn't update that!"))
-        .then(res => setAllUsers([...allUsers, u]))
-        .catch((error) => console.log(error));
+const updateUser = async (userDetails, allUsers, setAllUsers, user, setUser) => {
+    let arr = allUsers
+    arr.splice(userDetails.id, 1, userDetails)
+    console.log(arr)
+    console.log("bi", userDetails)
+    // const configObject = await {
+    //     method: "PATCH",
+    //     headers: {
+    //         "Content-Type": "application/json",
+    //         Accept: "application/json",
+    //     },
+    //     body: JSON.stringify(userDetails),
+    // };
+    // await fetch(`http://localhost:8080/users`, configObject)
+    //     .then((res) => (res.ok ? res.json() : "Oops we couldn't update that!"))
+    //     .then(res => {
+    //         setUser({ ...u, userInfo })
+    //         // find user to update, slice it, add new info, set all users
+    //         // then set new user.
+    //     })
+    //     .catch((error) => console.log(error));
 };
 
 module.exports = {

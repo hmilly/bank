@@ -10,7 +10,7 @@ import Form from "./Form"
 //     sImg.src = URL.createObjectURL(choice);
 //   });
 
-const Signup = ({ newUser, allUsers }) => {
+const Signup = ({ user, setUser, allUsers }) => {
     let history = useHistory();
     return (
         <div className="login">
@@ -20,7 +20,7 @@ const Signup = ({ newUser, allUsers }) => {
                 </button>
                 <p>Sign up</p>
             </section>
-            <Form setNewUser={newUser} allUsers={allUsers} btnName={"Sign Up"} />
+            <Form setUser={setUser} user={user} allUsers={allUsers} btnName={"Sign Up"} />
         </div>
     )
 }
