@@ -11,7 +11,7 @@ const setNewUser = async (userDetails, allUsers, setAllUsers) => {
         ...userDetails,
         "balance": 100,
         "savingsBal": 0,
-        "loansBal": -0,
+        "loansBal": 0,
         "transactions": [],
         "savingTran": [],
         "loansTran": []

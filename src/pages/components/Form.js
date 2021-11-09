@@ -20,14 +20,16 @@ const Form = ({ user, setUser, allUsers = [], setAllUsers, btnName }) => {
         const editedUser = {
             ...user,
             id: u.id,
-            firstName: u.firstName,
-            lastName: u.lastName,
+            firstName: userInfo.firstName,
+            lastName: userInfo.lastName,
             pword: u.pword
         }
         updateUser(editedUser, setUser)
+        window.alert(`User updated, thanks ${userInfo.firstName} ${userInfo.lastName}`)
     }
 
     const handleChange = (e) => {
+        console.log(userInfo)
         const name = e.target.name
         const v = e.target.value
         setUserInfo({ ...userInfo, id: parseInt(allUsers.length) + 1, [name]: v })

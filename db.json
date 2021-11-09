@@ -2,13 +2,13 @@
   "users": [
     {
       "id": 1,
-      "firstName": "Lady",
-      "lastName": "Muck",
-      "email": "lmuck@gmail.com",
-      "pword": "l",
-      "balance": 96,
-      "savingsBal": 101.75,
-      "loansBal": 0,
+      "firstName": "Cindaroo",
+      "lastName": "lindahoo",
+      "email": "cmuck@gmail.com",
+      "pword": "cindy",
+      "balance": 207,
+      "savingsBal": 90.75,
+      "loansBal": -100,
       "transactions": [
         {
           "transName": "Marks and Spencers",
@@ -26,104 +26,44 @@
           "date": "14.12.2020"
         },
         {
-          "transName": "savings",
-          "plus": 6.5,
-          "date": "15.12.2020"
+          "transName": "loans",
+          "minus": 100,
+          "date": "08/11/2021"
         },
         {
           "transName": "savings",
-          "minus": 15.99,
-          "date": "25.12.2020"
-        },
-        {
-          "transName": "loan",
-          "minus": 25.44,
-          "date": "05.01.2021"
+          "plus": 100.7,
+          "date": "08/11/2021"
         },
         {
           "transName": "savings",
-          "plus": 7.49,
-          "date": "19/09/2021"
-        },
-        {
-          "transName": "savings",
-          "plus": 0.05,
-          "date": "19/09/2021"
-        },
-        {
-          "transName": "savings",
-          "minus": 0.05,
-          "date": "19/09/2021"
-        },
-        {
-          "transName": "savings",
-          "plus": 0.5,
-          "date": "19/09/2021"
-        },
-        {
-          "transName": "savings",
-          "minus": 0.5,
-          "date": "19/09/2021"
-        },
-        {
-          "transName": "savings",
-          "plus": 0.5,
-          "date": "19/09/2021"
-        },
-        {
-          "transName": "savings",
-          "minus": 0.5,
-          "date": "19/09/2021"
-        },
-        {
-          "transName": "savings",
-          "plus": 0.5,
-          "date": "19/09/2021"
-        },
-        {
-          "transName": "savings",
-          "minus": 0.5,
-          "date": "19/09/2021"
-        },
-        {
-          "transName": "savings",
-          "plus": 0.75,
-          "date": "19/09/2021"
-        },
-        {
-          "transName": "savings",
-          "minus": 0.75,
-          "date": "19/09/2021"
-        },
-        {
-          "transName": "savings",
-          "minus": 10,
-          "date": "19/09/2021"
-        },
-        {
-          "transName": "savings",
-          "plus": 7,
-          "date": "19/09/2021"
+          "minus": 0.7,
+          "date": "08/11/2021"
         },
         {
           "transName": "loans",
+          "plus": 100,
+          "date": "08/11/2021"
+        },
+        {
+          "transName": "savings",
+          "plus": 50.7,
+          "date": "08/11/2021"
+        },
+        {
+          "transName": "savings",
+          "minus": 0.7,
+          "date": "08/11/2021"
+        },
+        {
+          "transName": "savings",
           "plus": 10,
-          "date": "19/09/2021"
-        },
-        {
-          "transName": "loans",
-          "minus": 10,
-          "date": "19/09/2021"
+          "date": "09/11/2021"
         },
         {
           "transName": "savings",
-          "minus": 0.1,
-          "date": "19/09/2021"
-        },
-        {
-          "transName": "savings",
-          "minus": 0.9,
-          "date": "19/09/2021"
+          "minus": 50,
+          "date": "09/11/2021"
         }
       ],
       "savingsTran": [
@@ -134,144 +74,90 @@
         },
         {
           "transName": "savings",
-          "plus": 2.99,
-          "date": "25.12.2020"
+          "minus": 100.7,
+          "date": "08/11/2021"
         },
         {
           "transName": "savings",
-          "minus": 7.49,
-          "date": "19/09/2021"
+          "plus": 0.7,
+          "date": "08/11/2021"
         },
         {
           "transName": "savings",
-          "minus": 0.05,
-          "date": "19/09/2021"
+          "minus": 50.7,
+          "date": "08/11/2021"
         },
         {
           "transName": "savings",
-          "plus": 0.05,
-          "date": "19/09/2021"
+          "plus": 0.7,
+          "date": "08/11/2021"
         },
         {
           "transName": "savings",
-          "minus": 0.5,
-          "date": "19/09/2021"
+          "minus": 10,
+          "date": "09/11/2021"
         },
         {
           "transName": "savings",
-          "plus": 0.5,
-          "date": "19/09/2021"
-        },
-        {
-          "transName": "savings",
-          "minus": 0.5,
-          "date": "19/09/2021"
-        },
-        {
-          "transName": "savings",
-          "plus": 0.5,
-          "date": "19/09/2021"
-        },
-        {
-          "transName": "savings",
-          "minus": 0.5,
-          "date": "19/09/2021"
-        },
-        {
-          "transName": "savings",
-          "plus": 0.5,
-          "date": "19/09/2021"
-        },
-        {
-          "transName": "savings",
-          "minus": 0.75,
-          "date": "19/09/2021"
-        },
-        {
-          "transName": "savings",
-          "plus": 0.75,
-          "date": "19/09/2021"
-        },
-        {
-          "transName": "savings",
-          "plus": 10,
-          "date": "19/09/2021"
-        },
-        {
-          "transName": "savings",
-          "minus": 7,
-          "date": "19/09/2021"
-        },
-        {
-          "transName": "savings",
-          "plus": 0.1,
-          "date": "19/09/2021"
-        },
-        {
-          "transName": "savings",
-          "plus": 0.9,
-          "date": "19/09/2021"
+          "plus": 50,
+          "date": "09/11/2021"
         }
       ],
       "loansTran": [
         {
-          "transName": "loan",
-          "plus": 25.44,
-          "date": "05.01.2021"
+          "transName": "loans",
+          "minus": 100,
+          "date": "08/11/2021"
         },
         {
           "transName": "loans",
-          "minus": 10,
-          "date": "19/09/2021"
+          "plus": 100,
+          "date": "08/11/2021"
         },
         {
           "transName": "loans",
-          "plus": 10,
-          "date": "19/09/2021"
+          "minus": 100,
+          "date": "08/11/2021"
         }
       ]
     },
     {
       "id": 2,
-      "firstName": "Mister",
+      "firstName": "Mike",
       "lastName": "Muck",
       "email": "mmuck@gmail.com",
-      "pword": "m",
+      "pword": "mike",
       "balance": 599.01,
-      "savingsBal": 15,
-      "loansBal": -10,
+      "savingsBal": 2000,
+      "loansBal": 0,
       "transactions": [
         {
-          "transName": "Marks and Spencers",
-          "minus": 5.1
+          "transName": "Sports direct",
+          "minus": 87.1
         },
         {
-          "transName": "Aldi",
-          "minus": 20.5
+          "transName": "Argos",
+          "minus": 35.25
         },
         {
-          "transName": "ASOS",
-          "plus": 15.99
+          "transName": "Sainsburys",
+          "plus": 21.59
         }
       ],
       "savingsTran": [
         {
           "transName": "savings",
-          "minus": 6.5
+          "minus": 500
         },
         {
           "transName": "savings",
-          "plus": 2.99
+          "minus": 400
         }
       ],
       "loansTran": [
         {
           "transName": "loan",
-          "plus": 25.44
-        },
-        {
-          "transName": "loan",
-          "minus": 15.8
+          "plus": 750
         }
       ]
     },
@@ -280,26 +166,26 @@
       "firstName": "Herutio",
       "lastName": "Muck",
       "email": "hmuck@gmail.com",
-      "pword": "h",
+      "pword": "hert",
       "balance": 101,
       "savingsBal": 0,
       "loansBal": -1,
       "transactions": [
         {
-          "transName": "Marks and Spencers",
-          "minus": 50
+          "transName": "Gregs",
+          "minus": 1.69
         }
       ],
       "savingsTran": [
         {
           "transName": "savings",
-          "minus": 20
+          "minus": 150
         }
       ],
       "loansTran": [
         {
           "transName": "loan",
-          "plus": 20
+          "minus": 4000
         }
       ]
     },
@@ -343,15 +229,54 @@
     },
     {
       "id": 5,
-      "firstName": "Peter",
-      "lastName": "Parker",
-      "email": "pp@gmail.com",
-      "pword": "lm",
-      "balance": 10,
+      "firstName": "hanna",
+      "lastName": "montanna",
+      "email": "hm@gmail.com",
+      "pword": "123123",
+      "balance": 100,
       "savingsBal": 0,
       "loansBal": 0,
       "transactions": [],
-      "savingsTran": [],
+      "savingTran": [],
+      "loansTran": []
+    },
+    {
+      "id": 6,
+      "firstName": "peter",
+      "lastName": "parker",
+      "email": "pp@gmail.com",
+      "pword": "123123",
+      "balance": 100,
+      "savingsBal": 0,
+      "loansBal": 0,
+      "transactions": [],
+      "savingTran": [],
+      "loansTran": []
+    },
+    {
+      "id": 7,
+      "firstName": "lauren",
+      "lastName": "hardy",
+      "email": "lh@gmail.com",
+      "pword": "123123",
+      "balance": 100,
+      "savingsBal": 0,
+      "loansBal": 0,
+      "transactions": [],
+      "savingTran": [],
+      "loansTran": []
+    },
+    {
+      "id": 8,
+      "firstName": "peter",
+      "lastName": "strange",
+      "email": "ps@gmail.com",
+      "pword": "123123",
+      "balance": 100,
+      "savingsBal": 0,
+      "loansBal": 0,
+      "transactions": [],
+      "savingTran": [],
       "loansTran": []
     }
   ]

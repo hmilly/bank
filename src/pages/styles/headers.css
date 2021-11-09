@@ -1,3 +1,7 @@
+*{
+  font-size: 1.02em;
+}
+
 .header{
   display: flex;
   height: 7%;

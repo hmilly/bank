@@ -14,34 +14,36 @@ const Transactions = ({ transactions, name }) => {
         }
     }
 
+    const cost = (t) => {
+        return (t.plus)
+            ? <><FontAwesomeIcon
+                icon={faPlus}
+                className="added" />
+                <h5>£{(t.plus).toFixed(2)}</h5></>
+            : <><FontAwesomeIcon
+                icon={faMinus}
+                className="minus" />
+                <h5>£{(t.minus).toFixed(2)}</h5></>
+    }
+
     return (
-        <div className="transactions_main">
-            <div className="tran_header">
-                <p className="tran_txt">Transactions</p>
-                <p className="tran_amount">Amount</p>
-            </div>
-            <div className="transactions">
+        <div className="transactions">
+            <header>
+                <h2>Transactions</h2>
+                <h2>Amount</h2>
+            </header>
+            <main>
                 {transactions.map((t, i) => (
                     <div className="transaction" key={i}>
-                        <h5 className="companyname">
-                            <p className="today">{t.date}</p>
-                            {whichName(t)}
-                        </h5>
+                        <p className="today">{t.date}</p>
+                        <h5 className="companyname">{whichName(t)}</h5>
                         <div className="paymentinfo">
-                            {(t.minus)
-                                ? <><FontAwesomeIcon
-                                    icon={faMinus}
-                                    className="minus" />
-                                    <h5>£{(t.minus).toFixed(2)}</h5></>
-                                : <><FontAwesomeIcon
-                                    icon={faPlus}
-                                    className="added" />
-                                    <h5>£{(t.plus).toFixed(2)}</h5></>}
+                            {cost(t)}
                         </div>
                     </div>
                 )
                 )}
-            </div>
+            </main>
         </div>
     )
 }

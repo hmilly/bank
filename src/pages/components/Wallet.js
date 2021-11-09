@@ -1,5 +1,4 @@
 import React from 'react'
-import man1 from "../img/man_1.png"
 import Transactions from "./Transactions"
 import { today } from "./fns"
 
@@ -16,23 +15,23 @@ const Wallet = ({ user }) => {
     return (
         <>
             <div className="account">
-                <div className="accountsData">
-                    <div className="walletbalance">
-                        <div className="balance">
-                            <h1 className="pounds">{pound}.</h1>
-                            <h3 className="pence">{pence}</h3>
-                        </div>
-                        <p className="balanceP">Balance</p>
-                    </div>
-                    <div className="userdate">
-                        <img src={man1} alt="user profile"></img>
-                        <div>
-                            <p>{today}</p>
-                        </div>
-                    </div>
+            <div>
+                <aside className="acc_wallet">
+                     <h3 className="acc_total">Balance</h3>
+                    <span className="acc_balance">
+                        <h1 className="acc_pounds">{pound}.</h1>
+                        <h3 className="acc_pence">{pence}</h3>
+                    </span>
+                </aside>
+                <aside>
+                    <h4>{today}</h4>
+                    <h1>Account holder:</h1>
+                    <h3>{user.firstName} {user.lastName}</h3>
+                    
+                </aside>
                 </div>
             </div>
-            {(user.transactions) ? <Transactions transactions={user.transactions} name={"wallet"} /> : <></>}
+            {(user.transactions) && <Transactions transactions={user.transactions} name={"wallet"} />}
         </>
     )
 }

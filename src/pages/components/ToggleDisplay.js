@@ -1,8 +1,17 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import { today, updateUser } from "./fns"
 
 const ToggleDisplay = ({ name, details, user, setDetails, setUser, bal, transactions, blockBtns }) => {
     const [num, setNum] = useState(0)
+    const [errorMsg, setErrorMsg] = useState("")
+
+    useEffect(() => {
+        clearTimeout(to)
+        const to = setTimeout(() => {
+            setErrorMsg("")
+        }, 5000);
+
+    }, [errorMsg])
 
     const setin = () => {
         updateUser({
@@ -24,39 +33,45 @@ const ToggleDisplay = ({ name, details, user, setDetails, setUser, bal, transact
         }, setUser)
     }
 
+
     const handleSubmit = (e) => {
+        console.log(details.type)
         e.preventDefault()
         if (num > 0) {
             if (name === "savings" && details.type === "out")
                 user.savingsBal - num < 0
-                    ? window.alert("Not enough money in savings!")
+                    ? setErrorMsg("Not enough money in savings!")
                     : setout()
             else if (name === "savings" && details.type === "in") setin()
             else if (name === "loans" && details.type === "out") setout()
             else if (name === "loans" && details.type === "in")
                 user.loansBal + num > 0
-                    ? window.alert("Amount exceeds loan value!")
+                    ? setErrorMsg("Amount exceeds loan value!")
                     : setin()
             setDetails({ ...details, state: false })
         } else {
-            window.alert("Please enter a number above 0")
+            setErrorMsg("Please enter a number above 0")
         }
     }
 
     return (
-        <form className="toggle">
-            <div>
-                <p>£</p>
-                <input
-                    type="number"
-                    min={0} step={0.10}
-                    onChange={(e) => setNum(+parseFloat(e.target.value).toFixed(2) )}>
-                </input>
-            </div>
-            <button className="transfer"
-                disabled={blockBtns}
-                onClick={(e) => handleSubmit(e)}>Transfer</button>
-        </form>
+        <>
+            <form className="toggle">
+                <section>
+                    <p>£</p>
+                    <input
+                        type="number"
+                        min={0} step={0.10}
+                        onChange={(e) => setNum(+parseFloat(e.target.value).toFixed(2))}>
+                    </input>
+                </section>
+                <button className="transfer"
+                    disabled={blockBtns}
+                    onClick={(e) => handleSubmit(e)}>Transfer
+                </button>
+            </form>
+            <h3 className="err">{errorMsg}</h3>
+        </>
     )
 }
 
