@@ -1,120 +1,128 @@
-.account{
+.account {
     display: flex;
     flex-direction: column;
-    background: rgb(36,36,36);
-    background: linear-gradient(45deg, rgba(36,36,36,1) 0%, rgba(52,52,52,1) 0%, rgba(37,37,43,1) 100%);
+    background: linear-gradient(
+      45deg,
+      rgba(36, 36, 36, 1) 0%,
+      rgba(52, 52, 52, 1) 0%,
+      rgba(37, 37, 43, 1) 100%
+    );
     align-self: center;
     height: auto;
     padding: 0 1%;
     border-radius: 10px;
-    margin-top: 10%;
-    width: 400px;
-}
-.accountsData{
-    display: flex;
-    justify-content: flex-end;
+    margin-top: 30px;
+    width: 600px;
     color: white;
-    width: 100%;
+  }
+  .account div {
+      display: flex;
+      width: 100%;
+      height: 156px;
+      flex-direction: row;
+  }
+  
+  .account aside:first-child {
+    border-radius: 2px;
+    width: 60%;
     height: auto;
-}
-
-.walletbalance{
-    width: 100%;
     margin: 2%;
+  }
+  .account aside:last-child {
+    width: 40%;
+    height: auto;
+    margin: 2%;
+  }
+  .account aside:last-child h4 {
+    text-align: center;
+    margin: 4% 0;
+    padding-bottom: 10px;
+  }
+  .acc_wallet {
     border-left: tomato solid 5px;
-    border-radius: 2px;
-}
-.savings{
-    width: 70%;
-    margin: 2%;
+  }
+  .savings {
     border-left: limegreen solid 5px;
-    border-radius: 2px;
-}
-.loans{
-    width: 70%;
-    margin: 2%;
+  }
+  .loans {
     border-left: turquoise solid 5px;
-    border-radius: 2px;
-}
-
-.balance{
+  }
+  .acc_total {
+    margin: 0 4%;
+    width: 100%;
+    height: 50%;
+  }
+  .acc_balance {
     display: block;
     margin: 0 4%;
-    width: 80%;
+    width: 100%;
+    height: 50%;
     font-size: 50px;
-}
-.pounds{
-    display:  inline-block;
+  }
+  .acc_pounds {
+    display: inline-block;
     margin: 0;
-    font-size:50px;
-}
-.pence{
-    display:  inline-block;
+    font-size: 50px;
+  }
+  .acc_pence {
+    display: inline-block;
     margin: 0;
     width: 20%;
     font-size: 30px;
-}
-.balanceP{
-    margin: 2% 4%;
-    width: 80%;
-    text-align: left;
-}
-
-.userdate{
-    width: 20%;
-    margin: 2%;
-    text-align: right;
-}
-
-.savingsbuttons{
-    width: 30%;
-    height: auto;
-}
-button.IN, button.TAKE, button.PAY,button.transfer{
+  }
+  
+  button.IN,
+  button.TAKE,
+  button.PAY,
+  button.transfer {
     display: block;
     font-size: medium;
-    margin: 10% 0;
-    width: 95%;
-    height: 35%;
+    margin: 5% 10%;
+    width: 80%;
+    height: 40%;
     border-radius: 5px;
     background-color: limegreen;
     color: white;
     cursor: pointer;
-}
-button.transfer{
+    font-size: 20px;
+  }
+  button.transfer {
     height: 95%;
-}
-button.OUT{
+  }
+  button.OUT {
     background-color: grey;
-}
-
-button.LOAN, button.BACK{
-    background-color: turquoise;
-}
-
-.transfer{
+  }
+  
+  button.LOAN,
+  button.BACK {
+    background-color: rgb(12, 185, 168);
+  }
+  
+  .transfer {
     border: red solid 1px;
-}
-.toggle{
+  }
+  .toggle {
     display: flex;
+    position: block;
     border-top: rgba(128, 128, 128, 0.563) solid 1px;
     width: 93%;
     align-self: center;
     color: white;
     padding: 10px 0;
-}
-.toggle div{
+  }
+  .toggle section {
     display: flex;
     width: 100%;
     padding: 5px;
     border-bottom: rgba(128, 128, 128, 0.563) solid 1px;
-}
-
-.toggle p{
+  }
+  
+  .toggle p {
     margin: auto 0;
     width: 20px;
-}
-.toggle input{
+    font-size: 22px;
+  }
+  .toggle input {
     margin: auto 1%;
     border-bottom: none;
     width: 100%;
@@ -122,12 +130,13 @@ button.LOAN, button.BACK{
     border: none;
     background-color: rgba(36, 36, 36, 0);
     outline: none;
-}
-
-.toggle input::-webkit-inner-spin-button {
-    -webkit-appearance: none; 
-}
-.toggle button{
+    font-size: 22px;
+  }
+  
+  .toggle input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+  }
+  .toggle button {
     color: white;
     background-color: orangered;
     margin: auto 0;
@@ -135,4 +144,10 @@ button.LOAN, button.BACK{
     padding: 5px;
     margin: 0 5px;
     cursor: pointer;
-}
+  }
+  .err{
+      color: red;
+      width: 100%;
+      text-align: center;
+  }
+  

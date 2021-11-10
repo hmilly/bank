@@ -1,79 +1,100 @@
-.login{
-    background: rgb(36,36,36);
-    background: linear-gradient(45deg, rgba(36,36,36,1) 0%, rgba(52,52,52,1) 0%, rgba(37,37,43,1) 100%);
-    color: white;
-    width: 400px;
-    height: auto;
-    display: block;
-    margin: 8% auto;
-    border-radius: 10px;
+.login {
+  background: rgb(36, 36, 36);
+  background: linear-gradient(
+    45deg,
+    rgba(36, 36, 36, 1) 0%,
+    rgba(52, 52, 52, 1) 0%,
+    rgba(37, 37, 43, 1) 100%
+  );
+  color: white;
+  width: 700px;
+  height: auto;
+  display: block;
+  margin: 8% auto;
+  border-radius: 10px;
+  font-size: 22px;
 }
-.login section{
-    display: flex;
-    align-items: center;
-    width: 100%;
-    height:auto;
-    justify-content: flex-end;
-    border-bottom: orangered solid 1px;
+.login section {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: auto;
+  justify-content: flex-end;
+  border-bottom: orangered solid 1px;
 }
-.login section p{
-    white-space: nowrap;
-    left: 0;
-    width: 80px;
+.login section p {
+  white-space: nowrap;
+  left: 0;
+  width: 100px;
 }
-.login section button{
-    width: 40px;
-    margin-left: 10px;
-    padding: 5px 0;
+.login section button {
+  width: 50px;
+  margin-left: 20px;
+  padding: 5px 5px;
 }
-.login form, .form{
-    margin: 5% 18%;
+.login form,
+.form {
+  margin: 10% 18%;
 }
-.login label, .login input, .login button, .login span,
-.form label, .form input, .form button{
-    display: block;
-    margin: 10px auto;
-    width: 98%;
+.login label,
+.login input,
+.login button,
+.login span,
+.form label,
+.form input,
+.form button {
+  display: block;
+  margin: 10px auto;
+  width: 98%;
+  font-size: 22px;
 }
-.login input,.form input{
-    color: white;
-    border: none;
-    border-bottom: orangered solid 1px;
-    background-color: rgba(36, 36, 36, 0);
-    outline: none;
+.login input,
+.form input {
+  color: white;
+  border: none;
+  border-bottom: orangered solid 1px;
+  background-color: rgba(36, 36, 36, 0);
+  outline: none;
 }
-.login button, .form button{
-    border-radius: 5px;
-    border: grey solid 1px;
-    background-color: grey;
-    color: white;
-    font-weight: 700;
-    padding: 10px;
-    cursor: pointer;
-}
-
-.signup a{
-    color: orangered;
-    display: block;
-    text-align: center;
-    padding: 5px 0;
-    margin: 0 auto;
-    cursor: pointer;
-}
-
-.login button:active, .login button:hover,
-.form button:active, .form button:hover{
-     background-color: orangered;
-}
-.signup a:hover{
-    text-decoration: underline;
-}
-.signup a:active, .signup a:visited{
-    color: orangered;
+.login button,
+.form button {
+  border-radius: 5px;
+  border: grey solid 1px;
+  background-color: grey;
+  color: white;
+  font-weight: 700;
+  padding: 10px;
+  cursor: pointer;
+  font-size: 28px;
 }
 
-#su-login{
-    background-color: orangered;
-    border: orangered solid 1px;
-    font-size: 18px;
+.signup a {
+  color: orangered;
+  display: block;
+  text-align: center;
+  padding: 5px 0;
+  margin: 0 auto;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 28px;
+}
+
+.login button:active,
+.login button:hover,
+.form button:active,
+.form button:hover {
+  background-color: orangered;
+}
+.signup a:hover {
+  text-decoration: underline;
+}
+.signup a:active,
+.signup a:visited {
+  color: orangered;
+}
+
+#su-login {
+  background-color: orangered;
+  border: orangered solid 1px;
+  font-size: 18px;
 }
