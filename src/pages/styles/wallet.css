@@ -1,153 +1,156 @@
 .account {
-    display: flex;
-    flex-direction: column;
-    background: linear-gradient(
-      45deg,
-      rgba(36, 36, 36, 1) 0%,
-      rgba(52, 52, 52, 1) 0%,
-      rgba(37, 37, 43, 1) 100%
-    );
-    align-self: center;
-    height: auto;
-    padding: 0 1%;
-    border-radius: 10px;
-    margin-top: 30px;
-    width: 600px;
-    color: white;
-  }
-  .account div {
-      display: flex;
-      width: 100%;
-      height: 156px;
-      flex-direction: row;
-  }
-  
-  .account aside:first-child {
-    border-radius: 2px;
-    width: 60%;
-    height: auto;
-    margin: 2%;
-  }
-  .account aside:last-child {
-    width: 40%;
-    height: auto;
-    margin: 2%;
-  }
-  .account aside:last-child h4 {
-    text-align: center;
-    margin: 4% 0;
-    padding-bottom: 10px;
-  }
-  .acc_wallet {
-    border-left: tomato solid 5px;
-  }
-  .savings {
-    border-left: limegreen solid 5px;
-  }
-  .loans {
-    border-left: turquoise solid 5px;
-  }
-  .acc_total {
-    margin: 0 4%;
-    width: 100%;
-    height: 50%;
-  }
-  .acc_balance {
-    display: block;
-    margin: 0 4%;
-    width: 100%;
-    height: 50%;
-    font-size: 50px;
-  }
-  .acc_pounds {
-    display: inline-block;
-    margin: 0;
-    font-size: 50px;
-  }
-  .acc_pence {
-    display: inline-block;
-    margin: 0;
-    width: 20%;
-    font-size: 30px;
-  }
-  
-  button.IN,
-  button.TAKE,
-  button.PAY,
-  button.transfer {
-    display: block;
-    font-size: medium;
-    margin: 5% 10%;
-    width: 80%;
-    height: 40%;
-    border-radius: 5px;
-    background-color: limegreen;
-    color: white;
-    cursor: pointer;
-    font-size: 20px;
-  }
-  button.transfer {
-    height: 95%;
-  }
-  button.OUT {
-    background-color: grey;
-  }
-  
-  button.LOAN,
-  button.BACK {
-    background-color: rgb(12, 185, 168);
-  }
-  
-  .transfer {
-    border: red solid 1px;
-  }
-  .toggle {
-    display: flex;
-    position: block;
-    border-top: rgba(128, 128, 128, 0.563) solid 1px;
-    width: 93%;
-    align-self: center;
-    color: white;
-    padding: 10px 0;
-  }
-  .toggle section {
-    display: flex;
-    width: 100%;
-    padding: 5px;
-    border-bottom: rgba(128, 128, 128, 0.563) solid 1px;
-  }
-  
-  .toggle p {
-    margin: auto 0;
-    width: 20px;
-    font-size: 22px;
-  }
-  .toggle input {
-    margin: auto 1%;
-    border-bottom: none;
-    width: 100%;
-    color: white;
-    border: none;
-    background-color: rgba(36, 36, 36, 0);
-    outline: none;
-    font-size: 22px;
-  }
-  
-  .toggle input::-webkit-inner-spin-button {
-    -webkit-appearance: none;
-  }
-  .toggle button {
-    color: white;
-    background-color: orangered;
-    margin: auto 0;
-    width: 50%;
-    padding: 5px;
-    margin: 0 5px;
-    cursor: pointer;
-  }
-  .err{
-      color: red;
-      width: 100%;
-      text-align: center;
-  }
-  
+  display: flex;
+  flex-direction: column;
+  background: linear-gradient(
+    45deg,
+    rgba(36, 36, 36, 1) 0%,
+    rgba(52, 52, 52, 1) 0%,
+    rgba(37, 37, 43, 1) 100%
+  );
+  align-self: center;
+  height: auto;
+  padding: 0 1%;
+  border-radius: 10px;
+  margin-top: 30px;
+  width: 700px;
+  color: white;
+}
+.account div {
+  display: flex;
+  width: 100%;
+  height: 156px;
+  flex-direction: row;
+}
+
+.account aside:first-child {
+  border-radius: 2px;
+  width: 60%;
+  height: auto;
+  margin: 2%;
+}
+.account aside:last-child {
+  width: 40%;
+  height: auto;
+  margin: 2%;
+}
+.account aside:last-child h4 {
+  text-align: right;
+  margin: 4% 0;
+  margin-bottom: 10px;
+}
+.account aside:last-child h3 {
+  text-align: right;
+  margin: 4% 0;
+}
+.acc_wallet {
+  border-left: tomato solid 5px;
+}
+.savings {
+  border-left: limegreen solid 5px;
+}
+.loans {
+  border-left: turquoise solid 5px;
+}
+.acc_total {
+  margin: 0 4%;
+  width: 100%;
+  height: 50%;
+}
+.acc_balance {
+  display: block;
+  margin: 0 4%;
+  width: 100%;
+  height: 50%;
+  font-size: 50px;
+}
+.acc_pounds {
+  display: inline-block;
+  margin: 0;
+  font-size: 50px;
+}
+.acc_pence {
+  display: inline-block;
+  margin: 0;
+  width: 20%;
+  font-size: 30px;
+}
+
+button.IN,
+button.TAKE,
+button.PAY,
+button.transfer {
+  display: block;
+  font-size: medium;
+  margin: 5% 10%;
+  width: 80%;
+  height: 40%;
+  border-radius: 5px;
+  background-color: limegreen;
+  color: white;
+  cursor: pointer;
+  font-size: 20px;
+}
+button.transfer {
+  height: 95%;
+}
+button.OUT {
+  background-color: grey;
+}
+
+button.LOAN,
+button.BACK {
+  background-color: rgb(12, 185, 168);
+}
+
+.transfer {
+  border: red solid 1px;
+}
+.toggle {
+  display: flex;
+  position: block;
+  border-top: rgba(128, 128, 128, 0.563) solid 1px;
+  width: 93%;
+  align-self: center;
+  color: white;
+  padding: 10px 0;
+}
+.toggle section {
+  display: flex;
+  width: 100%;
+  padding: 5px;
+  border-bottom: rgba(128, 128, 128, 0.563) solid 1px;
+}
+
+.toggle p {
+  margin: auto 0;
+  width: 20px;
+  font-size: 22px;
+}
+.toggle input {
+  margin: auto 1%;
+  border-bottom: none;
+  width: 100%;
+  color: white;
+  border: none;
+  background-color: rgba(36, 36, 36, 0);
+  outline: none;
+  font-size: 22px;
+}
+
+.toggle input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+}
+.toggle button {
+  color: white;
+  background-color: orangered;
+  margin: auto 0;
+  width: 50%;
+  padding: 5px;
+  margin: 0 5px;
+  cursor: pointer;
+}
+.err {
+  color: red;
+  width: 100%;
+  text-align: center;
+}

@@ -33,7 +33,7 @@ const Transactions = ({ transactions, name }) => {
                 <h2>Amount</h2>
             </header>
             <main>
-                {transactions.map((t, i) => (
+                {transactions && transactions.map((t, i) => (
                     <div className="transaction" key={i}>
                         <p className="today">{t.date}</p>
                         <h5 className="companyname">{whichName(t)}</h5>

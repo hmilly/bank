@@ -2,12 +2,12 @@
   "users": [
     {
       "id": 1,
-      "firstName": "Cindaroo",
-      "lastName": "lindahoo",
+      "firstName": "Cindy",
+      "lastName": "Lindy",
       "email": "cmuck@gmail.com",
       "pword": "cindy",
-      "balance": 207,
-      "savingsBal": 90.75,
+      "balance": 267,
+      "savingsBal": 30.75,
       "loansBal": -100,
       "transactions": [
         {
@@ -64,6 +64,21 @@
           "transName": "savings",
           "minus": 50,
           "date": "09/11/2021"
+        },
+        {
+          "transName": "savings",
+          "plus": 10,
+          "date": "11/11/2021"
+        },
+        {
+          "transName": "savings",
+          "minus": 400,
+          "date": "11/11/2021"
+        },
+        {
+          "transName": "savings",
+          "plus": 450,
+          "date": "11/11/2021"
         }
       ],
       "savingsTran": [
@@ -101,6 +116,21 @@
           "transName": "savings",
           "plus": 50,
           "date": "09/11/2021"
+        },
+        {
+          "transName": "savings",
+          "minus": 10,
+          "date": "11/11/2021"
+        },
+        {
+          "transName": "savings",
+          "plus": 400,
+          "date": "11/11/2021"
+        },
+        {
+          "transName": "savings",
+          "minus": 450,
+          "date": "11/11/2021"
         }
       ],
       "loansTran": [

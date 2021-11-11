@@ -2,7 +2,9 @@ import React, { useState, useEffect } from 'react'
 import ToggleDisplay from "./ToggleDisplay"
 import Transactions from "./Transactions"
 
-const WalletType = ({ divColour, user, setUser, balance, transactions, btn1, btn2, blockBtns }) => {
+const WalletType = (
+    { divColour, user, setUser, balance, transactions, btn1, btn2, blockBtns }
+) => {
     const [details, setDetails] = useState({ state: false, type: "" })
 
     useEffect(() => {
@@ -14,33 +16,32 @@ const WalletType = ({ divColour, user, setUser, balance, transactions, btn1, btn
     return (
         <>
             <div className="account">
-            <div>
-                <aside className={divColour}>
-                    <h3 className="acc_total">Balance</h3>
-                    <span className="acc_balance">
-                        <h1 className="acc_pounds">{balance}</h1>
-                    </span>
-                    
-                </aside>
-                <aside>
-                    <button className={btn1}
-                        disabled={blockBtns}
-                        onClick={() => setDetails({
-                            ...details,
-                            state: !details.state, type: "in"
-                        })}>
-                        {btn1}
-                    </button>
-                    <button className={btn2}
-                        disabled={blockBtns}
-                        onClick={() =>
-                            setDetails({
+                <div>
+                    <aside className={divColour}>
+                        <h3 className="acc_total">Balance</h3>
+                        <span className="acc_balance">
+                            <h1 className="acc_pounds">{balance}</h1>
+                        </span>
+                    </aside>
+                    <aside>
+                        <button className={btn1}
+                            disabled={blockBtns}
+                            onClick={() => setDetails({
                                 ...details,
-                                state: !details.state, type: "out"
+                                state: !details.state, type: "in"
                             })}>
-                        {btn2}
-                    </button>
-                </aside>
+                            {btn1}
+                        </button>
+                        <button className={btn2}
+                            disabled={blockBtns}
+                            onClick={() =>
+                                setDetails({
+                                    ...details,
+                                    state: !details.state, type: "out"
+                                })}>
+                            {btn2}
+                        </button>
+                    </aside>
                 </div>
                 {details.state &&
                     <ToggleDisplay

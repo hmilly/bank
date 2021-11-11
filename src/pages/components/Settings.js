@@ -31,15 +31,14 @@ const Settings = ({ setMenu, user, setUser, allUsers, setAllUsers, blockBtns, se
                 <h1>Settings</h1>
             </div>
             <div className="block">
-                <p>Block account</p>
+                <h3>Block account</h3>
                 <label className="switch">
                     <input type="checkbox" onChange={() => setBlockBtns(!blockBtns)}></input>
                     <span className="slider"></span>
                 </label>
             </div>
             <div className="rounds">
-                <p>Round expenses and
-                    put into savings</p>
+                <h3>Round up wallet into Savings</h3>
                 <label className="switch">
                     <input type="checkbox" onChange={() => round()} checked={rounded} />
                     <span className="slider round"

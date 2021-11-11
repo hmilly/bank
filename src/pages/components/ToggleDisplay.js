@@ -6,11 +6,9 @@ const ToggleDisplay = ({ name, details, user, setDetails, setUser, bal, transact
     const [errorMsg, setErrorMsg] = useState("")
 
     useEffect(() => {
-        clearTimeout(to)
-        const to = setTimeout(() => {
+        setTimeout(() => {
             setErrorMsg("")
         }, 5000);
-
     }, [errorMsg])
 
     const setin = () => {
@@ -33,7 +31,6 @@ const ToggleDisplay = ({ name, details, user, setDetails, setUser, bal, transact
         }, setUser)
     }
 
-
     const handleSubmit = (e) => {
         console.log(details.type)
         e.preventDefault()
@@ -48,7 +45,7 @@ const ToggleDisplay = ({ name, details, user, setDetails, setUser, bal, transact
                 user.loansBal + num > 0
                     ? setErrorMsg("Amount exceeds loan value!")
                     : setin()
-            setDetails({ ...details, state: false })
+            errorMsg !== "" && setDetails({ ...details, state: false })
         } else {
             setErrorMsg("Please enter a number above 0")
         }
