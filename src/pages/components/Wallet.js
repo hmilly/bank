@@ -1,6 +1,6 @@
 import React from 'react'
 import Transactions from "./Transactions"
-import { today } from "./fns"
+import { today } from "../fns/fns"
 
 const Wallet = ({ user }) => {
     let balance, pound = 0, pence = 0

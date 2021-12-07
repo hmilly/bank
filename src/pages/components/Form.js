@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { useHistory } from 'react-router-dom'
-import { setNewUser, updateUser } from "./fns"
+import { setNewUser, updateUser } from "../fns/fns"
 
 const Form = ({ user, setUser, allUsers = [], setAllUsers, btnName }) => {
     const [userInfo, setUserInfo] = useState({})

@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react'
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faArrowLeft } from "@fortawesome/free-solid-svg-icons"
 import Form from "./Form"
-import { today, updateUser } from "./fns"
+import { today, updateUser } from "../fns/fns"
 
 const Settings = ({ setMenu, user, setUser, allUsers, setAllUsers, blockBtns, setBlockBtns }) => {
     const [rounded, setRounded] = useState(false)

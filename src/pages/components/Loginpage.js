@@ -9,7 +9,7 @@ const LoginPage = ({ setUser, user, allUsers }) => {
     useEffect(() => {
         const u = allUsers.find(match => match.email === enteredEmail)
         if (u) setUser(u)
-    },[enteredEmail])
+    },[enteredEmail, allUsers])
 
     const handleSubmit = (e) => {
         e.preventDefault()

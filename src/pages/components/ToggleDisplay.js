@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import { today, updateUser } from "./fns"
+import { today, updateUser } from "../fns/fns"
 
 const ToggleDisplay = ({ name, details, user, setDetails, setUser, bal, transactions, blockBtns }) => {
     const [num, setNum] = useState(0)

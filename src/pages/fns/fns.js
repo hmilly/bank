@@ -4,9 +4,9 @@ let month = todayObj.getMonth() + 1;
 const year = todayObj.getFullYear();
 if (day < 10) { day = `0${day}` }
 if (month < 10) { month = `0${month}` }
-const today = `${day}/${month}/${year}`;
+export const today = `${day}/${month}/${year}`;
 
-const setNewUser = async (userDetails, allUsers, setAllUsers) => {
+export const setNewUser = async (userDetails, allUsers, setAllUsers) => {
     const u = {
         ...userDetails,
         "balance": 100,
@@ -30,7 +30,7 @@ const setNewUser = async (userDetails, allUsers, setAllUsers) => {
         .catch((error) => console.log(error));
 };
 
-const updateUser = async (editedUser, setUser) => {
+export const updateUser = async (editedUser, setUser) => {
     const configObject = {
         method: "PATCH",
         headers: {
@@ -45,10 +45,5 @@ const updateUser = async (editedUser, setUser) => {
         .catch((error) => console.log(error, configObject));
 };
 
-module.exports = {
-    today,
-    setNewUser,
-    updateUser
-}
 
 
