@@ -10,7 +10,7 @@ const Form = ({ user, setUser, allUsers = [], setAllUsers, btnName }) => {
         if (!u) {
             const obj = Object.fromEntries(Object.entries(userInfo).slice(0, 5))
             setNewUser(obj, allUsers, setAllUsers)
-            history.push("/")
+            history.push("/bank")
         } else {
             window.alert("Email entered is currently in use, please re-enter and try again")
         }

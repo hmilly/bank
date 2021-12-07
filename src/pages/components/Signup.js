@@ -9,7 +9,7 @@ const Signup = ({ user, setUser, allUsers }) => {
     return (
         <div className="login">
             <section>
-                <button onClick={() => history.push("/")}>
+                <button onClick={() => history.push("/bank")}>
                     <FontAwesomeIcon icon={faArrowLeft} />
                 </button>
                 <p>Sign up</p>

@@ -2,13 +2,13 @@
   "users": [
     {
       "id": 1,
-      "firstName": "Cindy",
-      "lastName": "Lindy",
-      "email": "cindy@gmail.com",
-      "pword": "cindy",
-      "balance": 267,
-      "savingsBal": 30.75,
-      "loansBal": -100,
+      "firstName": "lady",
+      "lastName": "lindie",
+      "email": "lady@gmail.com",
+      "pword": "lady",
+      "balance": 300,
+      "savingsBal": 50.25,
+      "loansBal": 45,
       "transactions": [
         {
           "transName": "Marks and Spencers",
@@ -21,9 +21,9 @@
           "date": "12.12.2020"
         },
         {
-          "transName": "ASOS",
-          "plus": 15.99,
-          "date": "14.12.2020"
+          "transName": "savings",
+          "plus": 0.7,
+          "date": "11/11/2021"
         }
       ],
       "savingsTran": [
@@ -31,11 +31,6 @@
           "transName": "savings",
           "minus": 6.5,
           "date": "19.12.2020"
-        },
-        {
-          "transName": "savings",
-          "minus": 100.7,
-          "date": "08/11/2021"
         }
       ],
       "loansTran": [
@@ -151,6 +146,45 @@
           "minus": 25
         }
       ]
+    },
+    {
+      "id": 9,
+      "firstName": "russel",
+      "lastName": "russ",
+      "email": "rr@gmail.com",
+      "pword": "russel",
+      "balance": 100,
+      "savingsBal": 0,
+      "loansBal": 0,
+      "transactions": [],
+      "savingTran": [],
+      "loansTran": []
+    },
+    {
+      "id": 6,
+      "firstName": "jason",
+      "lastName": "dawn",
+      "email": "jd@gmail.com",
+      "pword": "jjjjjj",
+      "balance": 100,
+      "savingsBal": 0,
+      "loansBal": 0,
+      "transactions": [],
+      "savingTran": [],
+      "loansTran": []
+    },
+    {
+      "id": 7,
+      "firstName": "mike",
+      "lastName": "myers",
+      "email": "mm@gmail.com",
+      "pword": "mmmmmm",
+      "balance": 100,
+      "savingsBal": 0,
+      "loansBal": 0,
+      "transactions": [],
+      "savingTran": [],
+      "loansTran": []
     }
   ]
 }

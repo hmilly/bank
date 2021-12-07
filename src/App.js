@@ -31,7 +31,7 @@ const App = () => {
 	return (
 		<div className="App">
 			<Switch>
-				<Route exact path="/" >
+				<Route exact path="/bank" >
 					<Loginheader />
 					<LoginPage setUser={setUser} user={user} allUsers={allUsers} />
 				</Route>

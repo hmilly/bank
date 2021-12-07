@@ -38,7 +38,7 @@ const Mainheader = ({ user, setUser, blockBtns, setBlockBtns, allUsers, setAllUs
                         <button onClick={() => setShowMenu(!showMenu)} >SETTINGS</button>
                     </li>
                     <li>
-                        <Link to="/">SIGN OUT</Link>
+                        <Link to="/bank">SIGN OUT</Link>
                     </li>
                 </ul>
             </div>
