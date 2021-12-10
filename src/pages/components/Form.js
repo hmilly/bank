@@ -7,7 +7,9 @@ const Form = ({ user, setUser, allUsers = [], setAllUsers, btnName }) => {
   let history = useHistory();
 
   const addUser = (u) => {
-    if (!u) {
+    if (u === undefined ) {
+      window.alert(`Hello ${userInfo.firstName}, please go back and login`);
+    } else if (!u) {
       const obj = Object.fromEntries(Object.entries(userInfo).slice(0, 5));
       setNewUser(obj, allUsers, setAllUsers);
       history.push("/bank");
@@ -19,17 +21,21 @@ const Form = ({ user, setUser, allUsers = [], setAllUsers, btnName }) => {
   };
 
   const modifyUser = (u) => {
-    const editedUser = {
-      ...user,
-      id: u.id,
-      firstName: userInfo.firstName,
-      lastName: userInfo.lastName,
-      pword: u.pword,
-    };
-    updateUser(editedUser, setUser);
-    window.alert(
-      `User updated, thanks ${userInfo.firstName} ${userInfo.lastName}`
-    );
+    if (u === undefined) {
+        window.alert(`Thanks ${userInfo.firstName}, for trying this website`);
+    } else {
+      setUser({
+        ...user,
+        id: u.id,
+        firstName: userInfo.firstName,
+        lastName: userInfo.lastName,
+        pword: u.pword,
+      });
+      updateUser(user);
+      window.alert(
+        `User updated, thanks ${userInfo.firstName} ${userInfo.lastName}`
+      );
+    }
   };
 
   const handleChange = (e) => {

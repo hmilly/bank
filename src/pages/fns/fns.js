@@ -30,7 +30,7 @@ export const setNewUser = async (userDetails, allUsers, setAllUsers) => {
         .catch((error) => console.log(error));
 };
 
-export const updateUser = async (editedUser, setUser) => {
+export const updateUser = async (editedUser) => {
     const configObject = {
         method: "PATCH",
         headers: {
@@ -41,7 +41,6 @@ export const updateUser = async (editedUser, setUser) => {
     };
     await fetch(`http://localhost:8080/users/${editedUser.id}`, configObject)
         .then((res) => (res.ok ? res.json() : console.log("Oops we couldn't update that!")))
-        .then(res => setUser(editedUser))
         .catch((error) => console.log(error, configObject));
 };
 

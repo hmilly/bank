@@ -21,41 +21,37 @@ const ToggleDisplay = ({
   }, [errorMsg]);
 
   const setin = () => {
-    updateUser(
-      {
-        ...user,
-        balance: user.balance - num,
-        [`${name}Bal`]: bal + num,
-        transactions: [
-          ...user.transactions,
-          { transName: name, minus: num, date: today },
-        ],
-        [`${name}Tran`]: [
-          ...transactions,
-          { transName: name, plus: num, date: today },
-        ],
-      },
-      setUser
-    );
+    setUser({
+      ...user,
+      balance: user.balance - num,
+      [`${name}Bal`]: bal + num,
+      transactions: [
+        ...user.transactions,
+        { transName: name, minus: num, date: today },
+      ],
+      [`${name}Tran`]: [
+        ...transactions,
+        { transName: name, plus: num, date: today },
+      ],
+    });
+    updateUser(user)
   };
 
   const setout = () => {
-    updateUser(
-      {
-        ...user,
-        balance: user.balance + num,
-        [`${name}Bal`]: bal - num,
-        transactions: [
-          ...user.transactions,
-          { transName: name, plus: num, date: today },
-        ],
-        [`${name}Tran`]: [
-          ...transactions,
-          { transName: name, minus: num, date: today },
-        ],
-      },
-      setUser
-    );
+    setUser({
+      ...user,
+      balance: user.balance + num,
+      [`${name}Bal`]: bal - num,
+      transactions: [
+        ...user.transactions,
+        { transName: name, plus: num, date: today },
+      ],
+      [`${name}Tran`]: [
+        ...transactions,
+        { transName: name, minus: num, date: today },
+      ],
+    });
+    updateUser(user)
   };
 
   const handleSubmit = (e) => {

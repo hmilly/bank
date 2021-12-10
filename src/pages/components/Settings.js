@@ -21,22 +21,20 @@ const Settings = ({
   const round = () => {
     let remainder = +(user.balance % 1).toFixed(2);
     if (remainder > 0) {
-      updateUser(
-        {
-          ...user,
-          balance: (user.balance -= remainder),
-          savingsBal: (user.savingsBal += remainder),
-          transactions: [
-            ...user.transactions,
-            { transName: "savings", minus: remainder, date: today },
-          ],
-          savingsTran: [
-            ...user.savingsTran,
-            { transName: "savings", plus: remainder, date: today },
-          ],
-        },
-        setUser
-      );
+      setUser({
+        ...user,
+        balance: (user.balance -= remainder),
+        savingsBal: (user.savingsBal += remainder),
+        transactions: [
+          ...user.transactions,
+          { transName: "savings", minus: remainder, date: today },
+        ],
+        savingsTran: [
+          ...user.savingsTran,
+          { transName: "savings", plus: remainder, date: today },
+        ],
+      });
+      updateUser(user);
     }
   };
 
