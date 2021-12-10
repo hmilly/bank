@@ -1,17 +1,17 @@
-import React from 'react'
-import ch from "../img/CH.png"
+import React from "react";
+import ch from "../img/CH.png";
 
 const Lsheader = () => {
-    return (
-        <div className="header">
-            <div>
-                <img src={ch} alt="CH" className="ch"></img>
-            </div>
-            <div className="txt">
-                <p>LOGIN / SIGN UP</p>
-            </div>
-        </div>
-    )
-}
+  return (
+    <div className="header">
+      <div>
+        <img src={ch} alt="CH" className="ch"></img>
+      </div>
+      <div className="txt">
+        <p>LOGIN / SIGN UP</p>
+      </div>
+    </div>
+  );
+};
 
-export default Lsheader
+export default Lsheader;

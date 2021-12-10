@@ -2,10 +2,10 @@
   "users": [
     {
       "id": 1,
-      "firstName": "lady",
-      "lastName": "lindie",
-      "email": "lady@gmail.com",
-      "pword": "lady",
+      "firstName": "Rosa",
+      "lastName": "Linda",
+      "email": "rl@gmail.com",
+      "pword": "rosa",
       "balance": 300,
       "savingsBal": 50.25,
       "loansBal": 45,
@@ -108,83 +108,6 @@
           "minus": 4000
         }
       ]
-    },
-    {
-      "id": 4,
-      "firstName": "floridan",
-      "lastName": "Muck",
-      "email": "fmuck@gmail.com",
-      "pword": "f",
-      "balance": 60,
-      "savingsBal": 2000,
-      "loansBal": 0,
-      "transactions": [
-        {
-          "transName": "Black market",
-          "minus": 5.1
-        },
-        {
-          "transName": "savings",
-          "minus": 10,
-          "date": "19/09/2021"
-        }
-      ],
-      "savingsTran": [
-        {
-          "transName": "savings",
-          "minus": 20000
-        },
-        {
-          "transName": "savings",
-          "plus": 10,
-          "date": "19/09/2021"
-        }
-      ],
-      "loansTran": [
-        {
-          "transName": "loan",
-          "minus": 25
-        }
-      ]
-    },
-    {
-      "id": 9,
-      "firstName": "russel",
-      "lastName": "russ",
-      "email": "rr@gmail.com",
-      "pword": "russel",
-      "balance": 100,
-      "savingsBal": 0,
-      "loansBal": 0,
-      "transactions": [],
-      "savingTran": [],
-      "loansTran": []
-    },
-    {
-      "id": 6,
-      "firstName": "jason",
-      "lastName": "dawn",
-      "email": "jd@gmail.com",
-      "pword": "jjjjjj",
-      "balance": 100,
-      "savingsBal": 0,
-      "loansBal": 0,
-      "transactions": [],
-      "savingTran": [],
-      "loansTran": []
-    },
-    {
-      "id": 7,
-      "firstName": "mike",
-      "lastName": "myers",
-      "email": "mm@gmail.com",
-      "pword": "mmmmmm",
-      "balance": 100,
-      "savingsBal": 0,
-      "loansBal": 0,
-      "transactions": [],
-      "savingTran": [],
-      "loansTran": []
     }
   ]
 }
