@@ -39,15 +39,15 @@ const Settings = ({
   };
 
   return (
-    <div className="settings">
-      <div className="settingsTitle">
+    <aside className="settings">
+      <div className="title">
         <button onClick={() => setMenu(false)}>
           <FontAwesomeIcon icon={faArrowLeft} />
         </button>
-        <h1>Settings</h1>
+        <h2>Settings</h2>
       </div>
       <div className="block">
-        <h3>Block account</h3>
+        <p>Block account</p>
         <label className="switch">
           <input
             type="checkbox"
@@ -57,13 +57,13 @@ const Settings = ({
         </label>
       </div>
       <div className="rounds">
-        <h3>Round up wallet into Savings</h3>
+        <p>Round up wallet into Savings</p>
         <label className="switch">
           <input type="checkbox" onChange={() => round()} checked={rounded} />
           <span className="slider round" disabled={rounded}></span>
         </label>
       </div>
-      <h4>User</h4>
+      <h3>User</h3>
       <Form
         user={user}
         setUser={setUser}
@@ -71,7 +71,7 @@ const Settings = ({
         setAllUsers={setAllUsers}
         btnName={"Save"}
       />
-    </div>
+    </aside>
   );
 };
 

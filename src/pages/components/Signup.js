@@ -7,7 +7,7 @@ import Form from "./Form";
 const Signup = ({ user, setUser, allUsers }) => {
   let history = useHistory();
   return (
-    <div className="login">
+    <main className="login">
       <section>
         <button onClick={() => history.push("/bank")}>
           <FontAwesomeIcon icon={faArrowLeft} />
@@ -20,7 +20,7 @@ const Signup = ({ user, setUser, allUsers }) => {
         allUsers={allUsers}
         btnName={"Sign Up"}
       />
-    </div>
+    </main>
   );
 };
 

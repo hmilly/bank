@@ -30,7 +30,7 @@ const Mainheader = ({
   }
   return (
     <>
-      <div className="header">
+      <header className="main">
         <div>
           <img src={ch} alt="CH" className="ch"></img>
         </div>
@@ -51,7 +51,7 @@ const Mainheader = ({
             <Link to="/bank">SIGN OUT</Link>
           </li>
         </ul>
-      </div>
+      </header>
       {menu}
     </>
   );

@@ -1,11 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Route, Switch } from "react-router-dom";
-import "./pages/styles/App.css";
-import "./pages/styles/headers.css";
-import "./pages/styles/login.css";
-import "./pages/styles/settings.css";
-import "./pages/styles/transactions.css";
-import "./pages/styles/wallet.css";
+import "./pages/styles/App.scss";
+import "./pages/styles/wallet.scss";
 // json-server --watch db.json --port 8080
 import Mainheader from "./pages/components/Mainheader";
 import Loginheader from "./pages/components/Loginheader";

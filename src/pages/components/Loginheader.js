@@ -3,14 +3,14 @@ import ch from "../img/CH.png";
 
 const Lsheader = () => {
   return (
-    <div className="header">
+    <header className="main">
       <div>
         <img src={ch} alt="CH" className="ch"></img>
       </div>
-      <div className="txt">
+      <span>
         <p>LOGIN / SIGN UP</p>
-      </div>
-    </div>
+      </span>
+    </header>
   );
 };
 

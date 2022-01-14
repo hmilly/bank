@@ -18,20 +18,20 @@ const Wallet = ({ user }) => {
     <>
       <div className="account">
         <div>
-          <aside className="acc_wallet">
+          <section className="acc_wallet">
             <h3 className="acc_total">Balance</h3>
             <span className="acc_balance">
-              <h1 className="acc_pounds">{pound}.</h1>
-              <h3 className="acc_pence">{pence}</h3>
+              <p className="acc_pounds">{pound}.</p>
+              <p className="acc_pence">{pence}</p>
             </span>
-          </aside>
-          <aside>
-            <h4>{today}</h4>
-            <h1>Account holder:</h1>
-            <h3>
+          </section>
+          <section>
+            <p>{today}</p>
+            <h3>Account holder:</h3>
+            <p>
               {user.firstName} {user.lastName}
-            </h3>
-          </aside>
+            </p>
+          </section>
         </div>
       </div>
       {user.transactions ? (

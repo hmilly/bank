@@ -1,0 +1,384 @@
+$heading1: 30px;
+$heading2: 20px;
+$text: 14px;
+
+* {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+}
+.App {
+  background-color: rgba(0, 0, 0, 0.911);
+  display: flex;
+  position: fixed;
+  flex-direction: column;
+  height: 100vh;
+  width: 100%;
+  overflow: hidden;
+
+  //headers
+  header.main {
+    display: flex;
+    height: 80px;
+    justify-content: space-between;
+    background: linear-gradient(
+      45deg,
+      rgb(68, 68, 68) 0%,
+      rgb(85, 85, 85) 0%,
+      rgba(37, 37, 43, 1) 100%
+    );
+    div {
+      width: 20%;
+      height: auto;
+      img {
+        margin: 5%;
+        width: auto;
+        height: 75%;
+      }
+    }
+
+    // login header
+    span {
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      list-style: none;
+      p {
+        display: inline-block;
+        color: white;
+        text-decoration: none;
+        white-space: nowrap;
+        background-color: rgba(0, 0, 0, 0);
+        border: none;
+        font-size: $heading2;
+        padding: 20px;
+      }
+    }
+    // main header
+    ul {
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      list-style: none;
+      li {
+        margin: 0 5px;
+        a,
+        button {
+          display: inline-block;
+          color: white;
+          text-decoration: none;
+          white-space: nowrap;
+          background-color: rgba(0, 0, 0, 0);
+          border: none;
+          font-size: $heading2;
+          padding: 6px;
+          height: 100%;
+          border-radius: 4px;
+          &:hover {
+            cursor: pointer;
+            text-decoration: underline;
+          }
+        }
+      }
+    }
+  }
+
+  // login / signup page
+  main.login {
+    background: rgb(36, 36, 36);
+    background: linear-gradient(
+      45deg,
+      rgba(36, 36, 36, 1) 0%,
+      rgba(52, 52, 52, 1) 0%,
+      rgba(37, 37, 43, 1) 100%
+    );
+    color: white;
+    width: 700px;
+    height: auto;
+    display: block;
+    margin: 8% auto;
+    border-radius: 10px;
+    font-size: $heading2;
+
+    section {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      width: 100%;
+      height: auto;
+      border-bottom: orangered solid 1px;
+      p {
+        white-space: nowrap;
+        width: 100px;
+      }
+      //signup btn
+      button {
+        width: 50px;
+        margin-left: 20px;
+        border-radius: 5px;
+        border: 1px solid grey;
+        background-color: grey;
+        color: #fff;
+        font-weight: 700;
+        padding: 10px;
+        font-size: $heading1;
+        &:hover {
+          cursor: pointer;
+          opacity: 0.8;
+        }
+      }
+    }
+  }
+
+  //settings panel styles
+  aside.settings {
+    position: absolute;
+    background: rgb(36, 36, 36);
+    background: linear-gradient(
+      45deg,
+      rgba(36, 36, 36, 1) 0%,
+      rgba(52, 52, 52, 1) 0%,
+      rgba(37, 37, 43, 1) 100%
+    );
+    align-self: flex-end;
+    height: 89vh;
+    width: 240px;
+    top: 100px;
+    color: white;
+    padding: 0 15px;
+    border-top: orangered solid 3px;
+    overflow: hidden;
+    .title,
+    .block,
+    .rounds {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+      height: 9%;
+      padding: 0 5px;
+    }
+    .title {
+      button {
+        font-size: $heading1;
+        color: white;
+        background-color: rgba(0, 0, 0, 0);
+        border: none;
+        &:hover {
+          cursor: pointer;
+          text-decoration: none;
+          color: rgb(235, 222, 109);
+        }
+      }
+      h2 {
+        font-size: $heading1;
+        text-decoration: underline;
+      }
+    }
+    h3 {
+      font-size: $heading2;
+      border-bottom: orangered solid 2px;
+    }
+    // other styles in form.scss
+    form {
+      width: 100%;
+      margin: 0;
+    }
+    /* styles for on/off switch */
+    .block,
+    .rounds {
+      p {
+        margin: auto 0;
+        width: 65%;
+        text-align: left;
+        padding: 10px;
+      }
+      .switch {
+        position: relative;
+        display: inline-block;
+        margin: 15px 0;
+        width: 70px;
+        height: 40px;
+        z-index: 2;
+        input {
+          margin: 13px 2px;
+          height: 30px;
+          width: 30px;
+          cursor: pointer;
+          z-index: 1;
+          border-radius: 50%;
+          border: 1px solid #ddd;
+          background-color: #ddd;
+          appearance: none;
+          -webkit-appearance: none;
+          outline: none;
+          -webkit-transition: 0.4s;
+          transition: 0.4s;
+          &:checked + .slider {
+            background-color: orangered;
+          }
+          &:checked {
+            -webkit-transform: translateX(30px);
+            -ms-transform: translateX(30px);
+            transform: translateX(30px);
+          }
+        }
+      }
+      .switch .slider {
+        position: absolute;
+        margin: 0 8px;
+        top: 20px;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: grey;
+        border: lightgrey solid 1px;
+        -webkit-transition: 0.4s;
+        transition: 0.4s;
+        height: 16px;
+        width: 70%;
+        z-index: -1;
+        border-radius: 34px;
+      }
+    }
+  }
+
+  //transactions pane styles
+  .transactions {
+    display: flex;
+    flex-direction: column;
+    background: rgb(36, 36, 36);
+    background: linear-gradient(
+      45deg,
+      rgba(36, 36, 36, 1) 0%,
+      rgba(52, 52, 52, 1) 0%,
+      rgba(37, 37, 43, 1) 100%
+    );
+    color: white;
+    align-self: center;
+    height: auto;
+    border-radius: 5px;
+    margin-top: 30px;
+    width: 700px;
+    overflow-y: scroll;
+    &::-webkit-scrollbar {
+      width: 8px;
+      height: auto;
+      background-color: black;
+    }
+    &::-webkit-scrollbar-track {
+      box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+      border-radius: 50px;
+    }
+    &::-webkit-scrollbar-thumb {
+      border-radius: 50px;
+      background: linear-gradient(
+        45deg,
+        rgba(36, 36, 36, 1) 0%,
+        rgba(52, 52, 52, 1) 0%,
+        rgba(37, 37, 43, 1) 100%
+      );
+      outline: 1px solid black;
+    }
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      margin: 10px 40px;
+      padding: 2% 0;
+      border-bottom: rgba(128, 128, 128, 0.39) solid 1px;
+      h4 {
+        display: inline-block;
+        margin: 5px;
+      }
+    }
+
+    main {
+      margin: 10px 40px;
+      div {
+        display: flex;
+        justify-content: space-between;
+        margin: 12px 0;
+        cursor: pointer;
+        padding: 8px;
+        font-size: $heading2;
+        &:hover {
+          border-radius: 5px;
+          background-color: grey;
+          box-shadow: 3px 5px black;
+        }
+        p {
+          text-align: left;
+          font-size: $text;
+          font-weight: 100;
+          margin: 0;
+          width: 30%;
+        }
+        h5 {
+          margin: 0;
+          width: 50%;
+        }
+        span {
+          display: flex;
+          justify-content: space-around;
+          width: 20%;
+          .added,
+          .minus {
+            margin-top: 5%;
+            font-size: $text;
+          }
+          .added {
+            color: lawngreen;
+          }
+          .minus {
+            color: red;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .App {
+    header.main {
+      height: 50px;
+      span {
+        p {
+          font-size: $heading2;
+        }
+      }
+      ul{
+        li{
+          a, button{
+          font-size: $text;
+          padding: 0;
+        }
+        }
+        
+      }
+    }
+    main.login {
+      width: 300px;
+      section {
+        button {
+          padding: 0;
+        }
+      }
+      form.details {
+        margin: 5px 20px;
+        button {
+          font-size: $heading2;
+          width: 80%;
+          margin: 35px auto;
+        }
+        a {
+          font-size: $heading2;
+        }
+        label,
+        input {
+          font-size: $heading2;
+        }
+      }
+    }
+  }
+}

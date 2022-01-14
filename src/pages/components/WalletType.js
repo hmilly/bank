@@ -24,13 +24,13 @@ const WalletType = ({
     <>
       <div className="account">
         <div>
-          <aside className={divColour}>
+          <section className={divColour}>
             <h3 className="acc_total">Balance</h3>
             <span className="acc_balance">
-              <h1 className="acc_pounds">{balance}</h1>
+              <p className="acc_pounds">{balance}</p>
             </span>
-          </aside>
-          <aside>
+          </section>
+          <section>
             <button
               className={btn1}
               disabled={blockBtns}
@@ -57,7 +57,7 @@ const WalletType = ({
             >
               {btn2}
             </button>
-          </aside>
+          </section>
         </div>
         {details.state ? (
           <ToggleDisplay

@@ -18,12 +18,12 @@ const Transactions = ({ transactions, name }) => {
     return t.plus ? (
       <>
         <FontAwesomeIcon icon={faPlus} className="added" />
-        <h5>£{t.plus.toFixed(2)}</h5>
+        <p>£{t.plus.toFixed(2)}</p>
       </>
     ) : (
       <>
         <FontAwesomeIcon icon={faMinus} className="minus" />
-        <h5>£{t.minus.toFixed(2)}</h5>
+        <p>£{t.minus.toFixed(2)}</p>
       </>
     );
   };
@@ -31,16 +31,16 @@ const Transactions = ({ transactions, name }) => {
   return (
     <div className="transactions">
       <header>
-        <h2>Transactions</h2>
-        <h2>Amount</h2>
+        <h4>Transactions</h4>
+        <h4>Amount</h4>
       </header>
       <main>
         {transactions ? (
           transactions.map((t, i) => (
-            <div className="transaction" key={i}>
-              <p className="today">{t.date}</p>
-              <h5 className="companyname">{whichName(t)}</h5>
-              <div className="paymentinfo">{cost(t)}</div>
+            <div key={i}>
+              <p>{t.date}</p>
+              <p>{whichName(t)}</p>
+              <span>{cost(t)}</span>
             </div>
           ))
         ) : (

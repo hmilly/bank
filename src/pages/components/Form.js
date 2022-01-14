@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { useHistory } from "react-router-dom";
 import { setNewUser, updateUser } from "../fns/fns";
+import "../styles/form.scss"
 
 const Form = ({ user, setUser, allUsers = [], setAllUsers, btnName }) => {
   const [userInfo, setUserInfo] = useState({});
@@ -61,7 +62,7 @@ const Form = ({ user, setUser, allUsers = [], setAllUsers, btnName }) => {
   };
 
   return (
-    <form className="form">
+    <form className="details">
       <label htmlFor="firstName">First name</label>
       <input
         type="text"
@@ -99,7 +100,7 @@ const Form = ({ user, setUser, allUsers = [], setAllUsers, btnName }) => {
         required
         onChange={(e) => handleChange(e)}
       ></input>
-      <button id="su-login" onClick={(e) => handleSubmit(e, btnName)}>
+      <button className="su-login" onClick={(e) => handleSubmit(e, btnName)}>
         {btnName}
       </button>
     </form>

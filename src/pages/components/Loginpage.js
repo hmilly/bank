@@ -57,7 +57,6 @@ const LoginPage = ({ setUser, user, allUsers }) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log(enteredEmail, enteredPword);
     if (enteredEmail === "user@gmail.com") {
       history.push("/wallet");
     } else {
@@ -68,11 +67,12 @@ const LoginPage = ({ setUser, user, allUsers }) => {
   };
 
   return (
-    <div className="login">
+    <main className="login">
       <section>
+        <p></p>
         <p>Login</p>
       </section>
-      <form onSubmit={handleSubmit}>
+      <form onSubmit={handleSubmit} className="details">
         <label htmlFor="email">Email</label>
         <input
           type="email"
@@ -90,7 +90,7 @@ const LoginPage = ({ setUser, user, allUsers }) => {
           <Link to="/signup">Sign up</Link>
         </span>
       </form>
-    </div>
+    </main>
   );
 };
 
