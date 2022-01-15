@@ -21,8 +21,7 @@ const Wallet = ({ user }) => {
           <section className="acc_wallet">
             <h3 className="acc_total">Balance</h3>
             <span className="acc_balance">
-              <p className="acc_pounds">{pound}.</p>
-              <p className="acc_pence">{pence}</p>
+              <p>{pound}.{pence}</p>
             </span>
           </section>
           <section>

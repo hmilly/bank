@@ -29,19 +29,24 @@ $text: 14px;
     div {
       width: 20%;
       height: auto;
-      img {
-        margin: 5%;
-        width: auto;
-        height: 75%;
-      }
+      margin: auto 5px;
     }
 
     // login header
+    // main header
+    ul,
     span {
       display: flex;
       justify-content: flex-end;
       align-items: center;
       list-style: none;
+      margin: 0;
+      padding: 0;
+      li {
+        margin: 0 5px;
+      }
+      a,
+      button,
       p {
         display: inline-block;
         color: white;
@@ -50,33 +55,18 @@ $text: 14px;
         background-color: rgba(0, 0, 0, 0);
         border: none;
         font-size: $heading2;
+      }
+      p {
         padding: 20px;
       }
-    }
-    // main header
-    ul {
-      display: flex;
-      justify-content: flex-end;
-      align-items: center;
-      list-style: none;
-      li {
-        margin: 0 5px;
-        a,
-        button {
-          display: inline-block;
-          color: white;
-          text-decoration: none;
-          white-space: nowrap;
-          background-color: rgba(0, 0, 0, 0);
-          border: none;
-          font-size: $heading2;
-          padding: 6px;
-          height: 100%;
-          border-radius: 4px;
-          &:hover {
-            cursor: pointer;
-            text-decoration: underline;
-          }
+      a,
+      button {
+        padding: 6px;
+        height: 100%;
+        border-radius: 4px;
+        &:hover {
+          cursor: pointer;
+          text-decoration: underline;
         }
       }
     }
@@ -92,7 +82,8 @@ $text: 14px;
       rgba(37, 37, 43, 1) 100%
     );
     color: white;
-    width: 700px;
+    width: 60%;
+    min-width: 300px;
     height: auto;
     display: block;
     margin: 8% auto;
@@ -119,7 +110,7 @@ $text: 14px;
         background-color: grey;
         color: #fff;
         font-weight: 700;
-        padding: 10px;
+        padding: 0;
         font-size: $heading1;
         &:hover {
           cursor: pointer;
@@ -140,9 +131,9 @@ $text: 14px;
       rgba(37, 37, 43, 1) 100%
     );
     align-self: flex-end;
-    height: 89vh;
+    height: 100%;
     width: 240px;
-    top: 100px;
+    top: 80px;
     color: white;
     padding: 0 15px;
     border-top: orangered solid 3px;
@@ -258,8 +249,9 @@ $text: 14px;
     height: auto;
     border-radius: 5px;
     margin-top: 30px;
-    width: 700px;
-    overflow-y: scroll;
+    width: 60%;
+    min-width: 300px;
+    overflow: scroll;
     &::-webkit-scrollbar {
       width: 8px;
       height: auto;
@@ -289,6 +281,7 @@ $text: 14px;
       h4 {
         display: inline-block;
         margin: 5px;
+        font-size: $heading2;
       }
     }
 
@@ -296,34 +289,33 @@ $text: 14px;
       margin: 10px 40px;
       div {
         display: flex;
-        justify-content: space-between;
-        margin: 12px 0;
-        cursor: pointer;
-        padding: 8px;
-        font-size: $heading2;
+        flex-direction: column;
+        align-items: flex-end;
+        margin: 10px 0;
+        padding: 5px;
         &:hover {
+          cursor: pointer;
           border-radius: 5px;
           background-color: grey;
           box-shadow: 3px 5px black;
         }
+        p:first-child {
+          align-self: flex-start;
+        }
         p {
           text-align: left;
-          font-size: $text;
+          font-size: $heading2;
           font-weight: 100;
           margin: 0;
-          width: 30%;
-        }
-        h5 {
-          margin: 0;
-          width: 50%;
+          width: auto;
         }
         span {
           display: flex;
           justify-content: space-around;
-          width: 20%;
+          width: 75px;
           .added,
           .minus {
-            margin-top: 5%;
+            margin-top: 4%;
             font-size: $text;
           }
           .added {
@@ -338,45 +330,71 @@ $text: 14px;
   }
 }
 
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 500px) {
   .App {
+    //change header to column
     header.main {
-      height: 50px;
+      flex-direction: column;
+      align-items: center;
+      ul,
       span {
+        padding: 0;
+        margin: 5px 0;
+        width: 100%;
+        justify-content: space-around;
+        a,
+        button,
         p {
+          padding: 0;
+          font-size: $text;
+          margin: auto;
+        }
+      }
+    }
+
+    .account {
+      div {
+        section:last-child {
+          button {
+            font-size: 18px;
+            width: 100%;
+          }
+        }
+      }
+    }
+
+    //settings takes up nearly whole screen
+    aside.settings {
+      width: 280px;
+      top: 79px;
+      .title {
+        h2 {
           font-size: $heading2;
         }
       }
-      ul{
-        li{
-          a, button{
-          font-size: $text;
-          padding: 0;
-        }
-        }
-        
-      }
     }
+
     main.login {
-      width: 300px;
+      //arrow back btn
       section {
         button {
           padding: 0;
+          font-size: $heading2;
         }
       }
-      form.details {
-        margin: 5px 20px;
-        button {
-          font-size: $heading2;
-          width: 80%;
-          margin: 35px auto;
-        }
-        a {
-          font-size: $heading2;
-        }
-        label,
-        input {
-          font-size: $heading2;
+    }
+
+    .transactions {
+      padding: 10px;
+      header,
+      main {
+        width: 100%;
+        margin: 0;
+        padding: 0;
+        div {
+          p {
+            font-size: 18px;
+          }
         }
       }
     }

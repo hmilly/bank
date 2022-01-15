@@ -1,6 +1,9 @@
+$heading1: 35px;
+$heading2: 30px;
+$heading3: 20px;
+$text: 14px;
+
 .account {
-  display: flex;
-  flex-direction: column;
   background: linear-gradient(
     45deg,
     rgba(36, 36, 36, 1) 0%,
@@ -12,13 +15,12 @@
   padding: 0 1%;
   border-radius: 10px;
   margin-top: 30px;
-  width: 700px;
+  width: 60%;
+  min-width: 300px;
   color: white;
   div {
     display: flex;
-    width: 100%;
     height: 156px;
-    flex-direction: row;
     // wallet page colouring
     .acc_wallet {
       border-left: tomato solid 5px;
@@ -31,69 +33,46 @@
     .loans {
       border-left: turquoise solid 5px;
     }
+    section {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+      margin: 2%;
+      width: 50%;
+      height: auto;
+      border-radius: 2px;
+    }
     //left section
     section:first-child {
-      border-radius: 2px;
-      width: 60%;
-      height: auto;
-      margin: 2%;
-      h3 {
-        margin: 0 4%;
-        width: 100%;
-        height: 50%;
-      }
+      h3,
       span {
-        display: block;
         margin: 0 4%;
-        width: 100%;
-        height: 50%;
-        font-size: 50px;
-        .acc_pounds {
+        p {
           display: inline-block;
-          margin: 0;
-          font-size: 50px;
-        }
-        .acc_pence {
-          display: inline-block;
-          margin: 0;
-          width: 20%;
-          font-size: 30px;
+          margin: auto 0;
+          font-size: $heading1;
         }
       }
     }
     //right section
     section:last-child {
-      width: 40%;
-      height: auto;
-      margin: 2%;
-      p:first-child {
+      justify-content: space-around;
+      align-items: flex-end;
+      p,
+      h3 {
         text-align: right;
-        margin: 4% 0;
-        margin-bottom: 10px;
+        margin: 0;
+        white-space: nowrap;
       }
-      p:last-child {
-        text-align: right;
-        margin: 4% 0;
-      }
-      button.IN,
-      button.TAKE,
-      button.PAY,
-      // inc styles for toggle form button
-      button.transfer {
-        display: block;
-        font-size: medium;
-        margin: 5% 10%;
+      button {
+        font-size: $heading3;
         width: 80%;
-        height: 40%;
+        height: 30%;
         border-radius: 5px;
         background-color: limegreen;
         color: white;
         cursor: pointer;
-        font-size: 20px;
-      }
-      button.transfer {
-        height: 95%;
-        border: red solid 1px;
+        font-size: $heading3;
       }
       button.OUT {
         background-color: grey;
@@ -121,7 +100,7 @@
       p {
         margin: auto 0;
         width: 20px;
-        font-size: 22px;
+        font-size: $heading3;
       }
       input {
         margin: auto 1%;
@@ -131,7 +110,7 @@
         border: none;
         background-color: rgba(36, 36, 36, 0);
         outline: none;
-        font-size: 22px;
+        font-size: $heading3;
         &::-webkit-inner-spin-button {
           -webkit-appearance: none;
         }
@@ -145,6 +124,8 @@
       padding: 5px;
       margin: 0 5px;
       cursor: pointer;
+      border-radius: 5px;
+      font-size: $heading3;
     }
   }
   .err {

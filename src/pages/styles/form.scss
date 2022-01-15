@@ -1,62 +1,79 @@
-form.details{
-    margin: 10% 18%;
-    label,
-    input,
-    button,
-    span {
+form.details {
+  margin: 10% 18%;
+  label,
+  input,
+  button,
+  span {
+    display: block;
+    margin: 10px auto;
+    width: 98%;
+    font-size: 22px;
+  }
+  input {
+    color: white;
+    border: none;
+    border-bottom: orangered solid 1px;
+    background-color: rgba(36, 36, 36, 0);
+    outline: none;
+  }
+  button {
+    border-radius: 5px;
+    border: grey solid 1px;
+    background-color: grey;
+    color: white;
+    font-weight: 700;
+    padding: 10px;
+    font-size: 28px;
+    &:hover {
+      cursor: pointer;
+      background-color: orangered;
+    }
+    &:active {
+      background-color: orangered;
+    }
+  }
+  span {
+    a {
+      color: orangered;
       display: block;
-      margin: 10px auto;
-      width: 98%;
-      font-size: 22px;
-    }
-    input {
-      color: white;
-      border: none;
-      border-bottom: orangered solid 1px;
-      background-color: rgba(36, 36, 36, 0);
-      outline: none;
-    }
-    button {
-      border-radius: 5px;
-      border: grey solid 1px;
-      background-color: grey;
-      color: white;
-      font-weight: 700;
-      padding: 10px;
+      text-align: center;
+      padding: 5px 0;
+      margin: 0 auto;
+
+      font-weight: 600;
       font-size: 28px;
       &:hover {
         cursor: pointer;
-        background-color: orangered;
+        text-decoration: underline;
       }
-      &:active {
-        background-color: orangered;
-      }
-    }
-    span {
-      a {
+      &:active,
+      &:visited {
         color: orangered;
-        display: block;
-        text-align: center;
-        padding: 5px 0;
-        margin: 0 auto;
-
-        font-weight: 600;
-        font-size: 28px;
-        &:hover {
-          cursor: pointer;
-          text-decoration: underline;
-        }
-        &:active,
-        &:visited {
-          color: orangered;
-        }
       }
-    }
-
-    // sign up login
-    .su-login {
-      background-color: orangered;
-      border: orangered solid 1px;
-      font-size: 18px;
     }
   }
+
+  // sign up login
+  .su-login {
+    background-color: orangered;
+    border: orangered solid 1px;
+    font-size: 18px;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  form.details {
+    margin: 5px 20px;
+    button, span a{
+      font-size: 18px;
+      width: 80%;
+      margin: 35px auto;
+    }
+    label,
+    input {
+      font-size: 18px;
+      padding: 0;
+      margin: 6px 0;
+    }
+  }
+}
